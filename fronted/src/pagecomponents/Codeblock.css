@@ -1,0 +1,120 @@
+.codeblock1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .codeblock1left, .codeblock1right {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  }
+  
+  .codeblock1left h3 {
+    margin-top: 0;
+    font-size: 2em;
+  }
+  
+  .span {
+    color: #1f9bcf;
+  }
+  
+  .codeblock1left p {
+    font-size: 1.3em;
+    margin: 10px 0;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .buttons .button1, .buttons .button2 {
+    display: inline-flex;
+    padding: 10px 20px;
+    margin-right: 10px;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons .icon {
+    margin-left: 8px; /* Space between text and icon */
+  }
+  
+  .buttons .button1 {
+    background-color: #a72828;
+    color: white;
+  }
+  
+  .button1:hover {
+    background-color: #8c1e1e;
+  }
+  
+  .buttons .button2 {
+    background-color: #1f9bcf;
+    color: white;
+  }
+  
+  .button2:hover {
+    background-color: #1b82ae;
+  }
+  
+  .codeblock1right .code-snippet {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #000000;
+    border-radius: 8px;
+    padding: 0px;
+    background-color: #f4f3f3;
+
+  }
+  .codeblock1right .code-snippet::after {
+    content: '';
+    display: inline-block;
+    width: 1ch; /* Adjust this width if necessary */
+    background: black;
+    animation: blink 1s steps(1) infinite;
+    position: absolute;
+  }
+  
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  .codeblock1right .code-snippet span {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid black; /* The cursor */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+               blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }  
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .codeblock1 {
+      flex-direction: column;
+    }
+  
+    .buttons .button1, .buttons .button2 {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
