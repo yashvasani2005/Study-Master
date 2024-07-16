@@ -44,7 +44,7 @@ export function signUp(accountType, firstName, lastName, email, password, confir
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await Apiconnector("POST", SIGNUP_API, { accountType, firstName, lastName, email, password, confirmPassword, otp });
+      const response = await ApiConnector("POST", SIGNUP_API, { accountType, firstName, lastName, email, password, confirmPassword, otp });
       console.log("SIGNUP API RESPONSE............", response);
 
       if (!response.data.success) {
@@ -67,7 +67,7 @@ export function login(email, password, navigate) {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
-      const response = await Apiconnector("POST", LOGIN_API, { email, password });
+      const response = await ApiConnector("POST", LOGIN_API, { email, password });
       console.log("LOGIN API RESPONSE............", response);
 
       if (!response.data.success) {
@@ -106,7 +106,7 @@ export function getPasswordResetToken(email, setEmailSent) {
   return async (dispatch) => {
     dispatch(setLoading(true));
     try {
-      const response = await Apiconnector("POST", RESETPASSTOKEN_API, { email });
+      const response = await ApiConnector("POST", RESETPASSTOKEN_API, { email });
       console.log("RESET PASSWORD TOKEN RESPONSE....", response);
 
       if (!response.data.success) {
@@ -127,7 +127,7 @@ export function resetPassword(password, confirmPassword, token) {
   return async (dispatch) => {
     dispatch(setLoading(true));
     try {
-      const response = await Apiconnector("POST", RESETPASSWORD_API, { password, confirmPassword, token });
+      const response = await ApiConnector("POST", RESETPASSWORD_API, { password, confirmPassword, token });
       console.log("RESET Password RESPONSE ... ", response);
 
       if (!response.data.success) {

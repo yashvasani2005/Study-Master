@@ -213,7 +213,7 @@ exports.login=async(req,res)=>{
                 const user=await User.findOne({email}).populate("additionaldetails")
            
                 if(!user){
-                   return res.status(401).json({
+                   return res.json({
                        success:false,
                        message:"user is not Registered , first sign_up before login"
                    })
