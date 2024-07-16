@@ -4,8 +4,11 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 import "./Home.css"
 // import Baner from "../fronted/src/assets/Baner.mp4"
 import Baner2 from "../.././assets/Baner2_2.mp4"
-import Codeblocks from '../../pagecomponents/Codeblocks';
-import Timelinesection from '../../pagecomponents/Timelinesection';
+import Codeblocks from '../../homepagecomponents/Codeblocks';
+import Timelinesection from '../../homepagecomponents/Timelinesection';
+import Learninglanguagesection from '../../homepagecomponents/Learninglanguagesection';
+import Becomeainstructor from '../../homepagecomponents/Becomeainstructor';
+import Exploremore from '../../homepagecomponents/Exploremore';
 
 
 function Home() {
@@ -61,6 +64,8 @@ function Home() {
 
         </div>
 
+          <Exploremore/>
+          
       </div>
 
       {/* SECTION :::--->>>2 */}
@@ -94,11 +99,15 @@ function Home() {
 
         <div className="timelinesection">
                        <Timelinesection/>
+                       <Learninglanguagesection/>
         </div>
 
       </div>
 
       {/* SECTION :::--->>>3 */}
+      <div className="section3">
+          <Becomeainstructor/>
+      </div>
 
       {/* FOOTERBABA */}
 

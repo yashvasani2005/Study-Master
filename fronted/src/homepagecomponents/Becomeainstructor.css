@@ -1,0 +1,88 @@
+/* Normal CSS */
+.main  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    /* background-color: #f9f9f9; */
+}
+
+.becomeleft {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.becomeleft img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.becomeright {
+    flex: 2;
+    padding: 10px 20px;
+}
+
+.becomeright h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.headingspan{
+    color: #1f9bcf;
+}
+
+.buttons {
+    margin:5px;
+    margin-top: 20px;
+  }
+  
+ .button1 {
+    display: inline-flex;
+    padding: 10px 20px;
+
+background-color: #a72828;
+    margin-top: 10px;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+   .icon {
+    margin-left: 10px; /* Space between text and icon */
+  }
+  
+  .button1:hover {
+    background-color: #8c1e1e;
+  }
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .becomeright h2 {
+        font-size: 1.5em;
+    }
+
+    .becomeright p {
+        font-size: 1em;
+    }
+
+    .becomebutton {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .becomeicon {
+        margin-left: 5px;
+    }
+}

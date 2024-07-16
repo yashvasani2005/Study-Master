@@ -12,7 +12,7 @@ exports.Otpgenerator=async(req,res)=>{
     try{
 
          //fetch the email from the req.body
-
+            console.log("Req Arruced")
          const {email}=req.body
            
          //validation of mail "user is already exixt or not"

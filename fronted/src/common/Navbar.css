@@ -1,0 +1,243 @@
+/* Main Navbar Container */
+.navbar-outer {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky; /* For Safari */
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-logo {
+  height: 54px;
+  width: 15vw;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul a{
+  text-decoration: none;
+}
+nav li {
+  margin-left: 20px;
+}
+
+.nav-link,
+.nav-link-active {
+  text-decoration: none; /* Ensure no underline */
+  color: white;
+  border: 2px solid black;
+  color: #000000;
+  width: 8vw;
+  height: 2.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #56ac67;
+}
+
+.nav-link:hover {
+  color: #000000;
+  font-weight: bolder;
+}
+
+.nav-link-active {
+  color: #000000;
+}
+
+/* Catalog dropdown styles */
+.catalog-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-icon {
+  margin-left: -20px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 8vw;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  padding: 5px 10px;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-weight: bold;
+  /* font-size: 15px; */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Login/Signup Buttons */
+.mainloginsignup {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.loginbutton,
+.signupbutton {
+  background-color: #a72828;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.loginbutton:hover,
+.signupbutton:hover {
+  background-color: #a64747;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .nav-link,
+  .nav-link-active {
+    width: 13vw;
+    height: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 54px;
+    width: 15vw;
+  }
+  .navbar-inner {
+    flex-direction: column;
+  }
+
+  .nav-center {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mainloginsignup {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .loginbutton,
+  .signupbutton {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .nav-link,
+  .nav-link-active {
+    width: 16vw;
+    height: 4vw;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .dropdown-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    width: 90%;
+  }
+
+  .nav-logo {
+    height: 35px;
+    width: 30vw;
+  }
+
+  .nav-link,
+  .nav-link-active {
+    width: 19vw;
+    height: 6vw;
+  }
+
+  .loginbutton,
+  .signupbutton {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  nav li {
+    margin-left: 10px;
+  }
+
+  .mainloginsignup {
+    margin-top: 5px;
+  }
+
+  .loginbutton,
+  .signupbutton {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .dropdown-item {
+    width: 100%;
+  }
+}

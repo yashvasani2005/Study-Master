@@ -94,12 +94,12 @@
   .timeline {
     position: relative;
     padding-left: 10px;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
   }
 
   .timeline-wrapper {
     display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     position: relative;
   }
 
@@ -125,37 +125,34 @@
     width: 41vw;
   }
 
-  .details {
 
-    display: flex; /* Align children side by side */
-justify-content: space-around;
-    background-color: #1f9bcf; /* Light background color */
-    border: 1px solid #000000; /* Border around the container */
-    border-radius: 10px; /* Rounded corners */
-    max-width: 800px; /* Max width of the container */
-    margin: 0 auto; /* Center align container */
+/* Normal CSS */
+.details {
+  /* display: flex;
+  justify-content: flex-end; Align to the right */
+  width: 300px;
+ 
+  gap: 20px; /* Add some space between the boxes */
+  border: 2PX solid black;
+  background-color: #1f9bcf;
 }
 
-.details .left, .details .right {
-
-  display: flex ;
-  justify-content: center;
-  align-items: center;
-    flex: 1; /* Equal width for both sections */
-    text-align: center;
-    padding: 10px; /* Padding inside sections */
-}
-.details  .special {
-  font-weight: bolder;
-  font-size: 2em;
-  color: #ffffff;
+.details .left,
+.details .right {
+  margin: 1vw;
+  text-align: center;
 }
 
-.details .left .notspecial, .details .right .notspecial {
-  font-size: 1.3em;
-    margin: 5px 15px; /* Margin for paragraphs */
-    width: 30px;
+.special {
+  font-size: 2rem; /* Larger font size for special */
+  font-weight: bold;
 }
+
+.notspecial {
+  font-size: 1rem; /* Smaller font size for notspecial */
+}
+
+
   /* Responsive Styles */
   @media (max-width: 1200px) {
     .col-lg-6 {
@@ -188,11 +185,12 @@ justify-content: space-around;
 
   @media (max-width: 768px) {
     .timeline-info {
-      margin-left: 3em;
+      /* margin-left: 3em; */
     }
     .container{
     padding-left: 0;
     }
+    
     .timeline-yr {
       width: 50px;
       height: 50px;
@@ -204,12 +202,16 @@ justify-content: space-around;
       height: 10vw;
       width: 10vw;
     }
+    .details {
+      flex-direction: column;
+      align-items: center; /* Center align in responsive mode */
+  }
   }
 
 
   @media (max-width: 576px) {
     .timeline-info {
-      margin-left: 3em;
+      /* margin-left: 3em; */
     }
 
     .timeline-yr {

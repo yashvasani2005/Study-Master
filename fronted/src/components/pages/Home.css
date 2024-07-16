@@ -1,5 +1,8 @@
 *{
     font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     /* background-color: #007BFF; */
     /* overflow-x: hidden; */
 }
@@ -22,9 +25,11 @@
     background-color: #f0f0f0;
     /* Adjust background color as needed */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    font-weight: 800;
+    color: #252525;
 }
 
 .outer:hover {
@@ -182,7 +187,8 @@ p {
     justify-content: center;
     align-items: center;
     gap: 20px; /* Space between buttons */
-    margin: 20px 0; /* Top and bottom margin */
+    margin-top: 10px ; /* Top and bottom margin */
+    margin-bottom: 30px;
 }
 
 .section2buttons .button1, .section2buttons .button2 {
@@ -333,13 +339,16 @@ p {
 
   /* responsive */
 @media (max-width: 768px) {
+  .section2buttons{
+    margin-bottom: 20px;
+  }
     .outer {
 
         padding: 15px;
     }
 
     p {
-        font-size: 1em;
+        font-size: 14px;
     }
 
     .inner {
@@ -379,6 +388,9 @@ p {
 }
 
 @media (max-width: 480px) {
+  .section2buttons{
+    margin-bottom: 10px;
+  }
     .outer {
         padding: 10px;
     }

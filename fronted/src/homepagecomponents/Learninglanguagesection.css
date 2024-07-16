@@ -1,0 +1,80 @@
+.button1, .button2 {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button1:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Normal CSS */
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.heading .headingspan{
+    color: #1f9bcf;
+
+}
+.imgsection {
+    display: flex;
+    justify-content: center;
+    /* gap: -0px; */
+    margin-bottom: 20px;
+}
+
+.imgsection img {
+    width: 350px; /* Reduce image size */
+    height: auto;
+}
+
+.button {
+    text-align: center;
+}
+
+.button1 {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color:#218838 ;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .heading h2 {
+        font-size: 1.5em;
+    }
+
+    .heading p {
+        font-size: 1em;
+    }
+
+    .imgsection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgsection img {
+        width: 175px; /* Further reduce image size for smaller screens */
+    }
+
+    .button1 {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
