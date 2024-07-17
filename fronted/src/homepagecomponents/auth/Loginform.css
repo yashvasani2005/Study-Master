@@ -1,0 +1,99 @@
+/* Container for the entire form */
+.lf-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Label */
+  .lf-label {
+    width: 100%;
+  }
+  
+  .lf-label-text {
+    font-size: 0.875rem;
+    color: #000000;
+    margin-bottom: 0.25rem;
+    line-height: 1.375rem;
+  }
+  
+  .lf-required {
+    color: #ff4b5c;
+  }
+  
+  /* Input field */
+  .lf-input {
+    background-color: #d2d2d2;
+    border: none;
+    border-radius: 0.5rem;
+    color: #000000;
+    padding: 0.8rem;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    font-weight: 600;
+  }
+  .lf-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
+  }
+  .lf-relative {
+    position: relative;
+  }
+  
+  /* Eye icon */
+  .lf-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 2.375rem;
+    cursor: pointer;
+  }
+  
+  /* Forgot Password link */
+  .lf-forgot-password {
+    display: block;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #000000;
+    max-width: max-content;
+    margin-left: auto;
+  }
+  
+  /* Submit button */
+  .lf-btn {
+    background-color:#a90404;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .lf-form {
+      gap: 0.75rem;
+    }
+  
+    .lf-label-text {
+      font-size: 0.75rem;
+    }
+  
+    .lf-input {
+      padding: 0.5rem;
+    }
+  
+    .lf-icon {
+      top: 2.25rem;
+    }
+  
+    .lf-forgot-password {
+      font-size: 0.625rem;
+    }
+  
+    .lf-btn {
+      padding: 0.5rem;
+    }
+  }
+  

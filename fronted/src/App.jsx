@@ -8,6 +8,7 @@ import Navbar from './common/Navbar'
 import Openroute from './homepagecomponents/auth/Openroute'
 import Signup from './components/pages/Signup'
 import Login from './components/pages/Login'
+import Forgotpassword from './components/pages/Forgotpassword'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Home/>} /> 
         <Route path="signup" element = { <Openroute> <Signup /> </Openroute> } />
         <Route path="login" element = { <Openroute> <Login /> </Openroute> } />
+        <Route path="forgot-password" element = { <Openroute> <Forgotpassword /> </Openroute> } />
       </Routes>
           
     </div>

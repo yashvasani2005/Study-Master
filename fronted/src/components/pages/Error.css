@@ -1,0 +1,49 @@
+/* Error.css */
+.error-container {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .error-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .error-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .home-link {
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .home-link:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .error-container {
+      padding: 30px;
+    }
+  
+    .error-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .error-container p {
+      font-size: 1rem;
+    }
+  
+    .home-link {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
