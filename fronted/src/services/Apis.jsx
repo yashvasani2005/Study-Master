@@ -28,5 +28,5 @@ export const endpoints = {
   LOGIN_API: `${BASE_URL}/api/v1/auth/login`,
 
   RESETPASSTOKEN_API: `${BASE_URL}/api/v1/auth/reset-password-token`,
-  RESETPASSWORD_API: `${BASE_URL}/auth/reset-password`,
+  RESETPASSWORD_API: `${BASE_URL}/api/v1/auth/reset-password`,
 };

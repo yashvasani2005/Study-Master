@@ -102,7 +102,7 @@ export function logout(navigate) {
   };
 }
 
-export function getPasswordResetToken(mail, sentmail) {
+export function getPasswordResetToken(mail, setsentmail) {
   return async (dispatch) => {
     dispatch(setLoading(true));
     try {
@@ -114,7 +114,7 @@ export function getPasswordResetToken(mail, sentmail) {
       }
 
       toast.success("Reset Email Sent");
-      sentmail(true);
+      setsentmail(true);
     } catch (error) {
       console.log("RESET PASSWORD TOKEN Error", error);
       toast.error("Failed to send email for resetting password");

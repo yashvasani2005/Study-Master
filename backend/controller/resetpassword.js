@@ -7,12 +7,11 @@ exports.resetpasswordtoken = async (req, res) => {
     try {
         //get mail from request body
 
-        const { email } = req.body;
-
+        const { mail } = req.body;
 
         //cheking--->mail must be altready registered
 
-        const user = await User.findOne({ email: email })
+        const user = await User.findOne({ email: mail })
 
         if (!user) {
             return res.status(401).json({
@@ -29,16 +28,16 @@ exports.resetpasswordtoken = async (req, res) => {
         //update the user by adding token and expiring time
 
         const updateduser = await User.findOneAndUpdate(
-            { email: email },
+            { email: mail },
             { token: token, resetpasswordexpire: Date.now() + 5 * 60 * 1000 }, { new: true })
         console.log(updateduser)
         // create the url
-        const url = `http://localhost:3000/update-password/${token}`
+        const url = `http://localhost:5173//update-password/${token}`
 
         //send the mail
 
         await MailSender(
-            email,
+            mail,
             "Reser Your Password ",
             `password reset link ${url}`
         )
