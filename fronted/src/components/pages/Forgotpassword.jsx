@@ -4,6 +4,7 @@ import './Forgotpassword.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPasswordResetToken } from "../../services/operations/authAPI";
 
+
 function Forgotpassword() {
     const { loading } = useSelector((state) => state.auth);
     const [sentmail, setsentmail] = useState(false);
@@ -19,7 +20,7 @@ const Handleonsubmit=(e)=>{
         <div className="forgot-password">
             {
                 loading ?
-                    <div className="forgot-password__loading">Loading...</div>
+                   <div class="spinner"></div>
                     :
                     <div className="forgot-password__container">
                         <h1 className="forgot-password__title">

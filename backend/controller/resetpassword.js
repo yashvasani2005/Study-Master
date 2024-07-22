@@ -32,7 +32,7 @@ exports.resetpasswordtoken = async (req, res) => {
             { token: token, resetpasswordexpire: Date.now() + 5 * 60 * 1000 }, { new: true })
         console.log(updateduser)
         // create the url
-        const url = `http://localhost:5173//update-password/${token}`
+        const url = `http://localhost:5173/update-password/${token}`
 
         //send the mail
 
@@ -65,11 +65,11 @@ exports.resetpassword = async (req, res) => {
 
     try {
         //data fetch
-        const { password, confirmpassword, token } = req.body
+        const { password, confirmPassword, token } = req.body
 
         //validation
 
-        if (password !== confirmpassword) {
+        if (password !== confirmPassword) {
             return res.json({
                 success: false,
                 message: "Both password does not matching"
