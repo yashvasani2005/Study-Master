@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import OtpInput from 'react-otp-input';
 import './VerifyEmail.css';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import { signUp } from "../../services/operations/authAPI";
-import { sendOtp } from "../../services/operations/authAPI";
+import { signUp, sendOtp } from "../../services/operations/authAPI";
 
 function VerifyEmail() {
     const dispatch = useDispatch();
@@ -25,6 +23,13 @@ function VerifyEmail() {
         dispatch(signUp(accountType, firstName, lastName, email, password, confirmPassword, otp, navigate));
     };
 
+    const handleOtpChange = (e) => {
+        const value = e.target.value.replace(/\D/g, "");
+        if (value.length <= 6) {
+            setOtp(value);
+        }
+    };
+
     return (
         <div className="verify-email-container">
             {loading ? (
@@ -34,12 +39,15 @@ function VerifyEmail() {
                     <h1>Verify Email</h1>
                     <p>A verification code has been sent to you. Enter the code below</p>
                     <form onSubmit={handleSubmit}>
-                    <OtpInput value={otp} onChange={setOtp} numInputs={6}                      // this otp box conatiner is copied from internet  
-                  renderInput = {(props) => (
-                    <input {...props}  placeholder="-"  style={{boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",}}  className="w-[48px] lg:w-[60px] border-0 bg-richblack-800 rounded-[0.5rem] text-richblack-5 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-yellow-50"  />
-                        )}
-                  containerStyle = {{ justifyContent: "space-between", gap: "0 6px", }} 
-                />
+                        <input
+                            type="text"
+                            value={otp}
+                            onChange={handleOtpChange}
+                            className="single-otp-input"
+                            placeholder="Enter OTP"
+                            maxLength="6"
+                            pattern="\d*"
+                        />
                         <button className="verifyemailbutton" type="submit">
                             Verify Email
                         </button>

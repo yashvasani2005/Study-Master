@@ -24,7 +24,7 @@ function Home() {
           <Link to={"/signup"}>
             <div className='outer'>
               <div className='inner'>
-                <p>Become a Instructor</p>
+                <div>Become a Instructor</div>
                 <FaCircleArrowRight />
               </div>
             </div>
@@ -39,11 +39,11 @@ function Home() {
 
         <div className="section1buttons">
           <Link to={"/signup"}>
-            <button className='button1'>Learn More</button>
+            <button className='learnmore'>Learn More</button>
           </Link>
 
           <Link to={"/login"}>
-            <button className='button2'>Book a Demo</button>
+            <button className='bookademo'>Book a Demo</button>
           </Link>
 
 
@@ -72,11 +72,11 @@ function Home() {
       <div className="section2">
         <div className="section2buttons">
           <Link to={"/signup"}>
-            <button className='button1'>Explore full Catalog    <FaCircleArrowRight /></button>
+            <button className='explorefull'>Explore full Catalog    <FaCircleArrowRight /></button>
           </Link>
 
           <Link to={"/login"}>
-            <button className='button2'>Learn more</button>
+            <button className='section2learnmore'>Learn more</button>
           </Link>
 
         </div>
