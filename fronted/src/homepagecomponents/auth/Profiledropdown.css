@@ -1,0 +1,79 @@
+/* Profiledropdown.css */
+
+.profileDropdown-button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profileDropdown-container img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.50rem;
+    /* font-size: 20vw; */
+  }
+  
+  .profileDropdown-avatar {
+    aspect-ratio: 1 / 1;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid black;
+    display: flex;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+  }
+  
+  .profileDropdown-icon {
+
+    /* font-size: 1.3rem;  */
+    color: #000000; /* Use a consistent color scheme */
+  }
+
+  .profileDropdown-menu {
+    position: absolute;
+    top: 118%;
+    right: 0;
+    z-index: 1000;
+    border: 1px solid #1F2937;
+    background-color: #111827;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    width: max-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profileDropdown-link {
+    text-decoration: none;
+  }
+  
+  .profileDropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    color: #D1D5DB;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .profileDropdown-item:hover {
+    background-color: #1F2937;
+    color: #F9FAFB;
+  }
+  
+  .profileDropdown-item-icon {
+    font-size: 1.125rem;
+  }
+  .relative{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

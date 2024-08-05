@@ -11,6 +11,8 @@ import Login from './components/pages/Login'
 import Forgotpassword from './components/pages/Forgotpassword'
 import Updatepassword from './components/pages/Updatepassword'
 import VerifyEmail from './components/pages/VerifyEmail'
+import Myprofile from './components/core/dashboard/Myprofile'
+import About from './components/pages/About'
 
 function App() {
 
@@ -25,6 +27,9 @@ function App() {
         <Route path="forgot-password" element = { <Openroute> <Forgotpassword /> </Openroute> } />
         <Route path="verify-email" element = { <Openroute> <VerifyEmail /> </Openroute> } />
         <Route path="update-password/:id" element = { <Openroute> <Updatepassword /> </Openroute> } />
+        <Route path="dashboard/my-profile" element={ < Myprofile />} /> 
+        <Route path="dashboard/cart" element={<h1>This is my cart</h1>} /> 
+        <Route path="/about" element={<Openroute> <About/>  </Openroute> } /> 
 
       </Routes>
           

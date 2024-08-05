@@ -6,6 +6,7 @@ import "./Navbar.css"; // Import the CSS file
 import { useSelector } from "react-redux";
 import { IoCart } from "react-icons/io5";
 import Profiledropdown from "../homepagecomponents/auth/Profiledropdown";
+import logo from "../assets/Images/prev.png"
 import { MdOutlineArrowCircleDown, MdOutlineArrowCircleUp } from "react-icons/md";
 
 const subLinks = [
@@ -55,7 +56,7 @@ function Navbar() {
     <div className="navbar-outer">
       <div className="navbar-inner">
         <Link to="/">
-          <img src="Preview.png" alt="Logo" className="nav-logo" />
+          <img src={logo} alt="Logo" className="nav-logo" />
         </Link>
 
         <nav className="nav-center">
@@ -96,13 +97,13 @@ function Navbar() {
       </div>
 
       <div className="mainloginsignup">
-        {user && user.accounttype !== "Instructor" && (
+        {token !== null && user && user.accounttype !== "Instructor" && (
           <Link to="/dashboard/cart" className="relative">
             <IoCart />
             {totalitems > 0 && <span>{totalitems}</span>}
           </Link>
         )}
-        {token === null && (
+        {token === null ? (
           <>
             <Link to="/login">
               <button className="loginbutton">Login</button>
@@ -111,8 +112,8 @@ function Navbar() {
               <button className="signupbutton">SignUp</button>
             </Link>
           </>
-        )}
-        {token !== null && <Profiledropdown />}
+        ):(<Profiledropdown />)}
+        {/* {token !== null && <Profiledropdown />} */}
       </div>
     </div>
   );

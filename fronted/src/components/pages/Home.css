@@ -37,10 +37,11 @@
 
 .inner {
   height: 80%;
-  width: 80%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 20px;
 }
 
 p {
@@ -365,6 +366,9 @@ p {
 
     .inner {
         gap: 5px;
+        font-size: 15px;
+        width: 40vw;
+ 
     }
 
     .section1description {
@@ -405,7 +409,7 @@ p {
   }
     .outer {
         padding: 10px;
-        width: 30vw;
+        width: 40vw;
         font-size: small;
     }
 

@@ -1,7 +1,7 @@
 /* Main Navbar Container */
 .navbar-outer {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #1f9bcf;
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
 }
 
 .nav-logo {
-  height: 54px;
+  height: 60px;
   width: 15vw;
 }
 
@@ -47,8 +47,8 @@ nav li {
 .nav-link,
 .nav-link-active {
   text-decoration: none; /* Ensure no underline */
-  color: white;
-  border: 2px solid black;
+  /* color: white; */
+  /* border: 2px solid black; */
   color: #000000;
   width: 8vw;
   height: 2.5vw;
@@ -56,9 +56,13 @@ nav li {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: #56ac67;
+  background-color: #ffffff;
+  margin: 5px;
 }
-
+.nav-link-active{
+  /* background-color: #f0f0f0; */
+  font-weight: bold;
+}
 .nav-link:hover {
   color: #000000;
   font-weight: bolder;
@@ -76,7 +80,7 @@ nav li {
 }
 
 .dropdown-icon {
-  margin-left: -20px;
+  margin-left: -25px;
   cursor: pointer;
 }
 
@@ -109,6 +113,7 @@ nav li {
   background-color: #f0f0f0;
 }
 
+
 /* Login/Signup Buttons */
 .mainloginsignup {
   display: flex;
@@ -125,9 +130,10 @@ nav li {
   padding: 10px 20px;
   margin-left: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 17px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-top: 0px;
 }
 
 .loginbutton:hover,

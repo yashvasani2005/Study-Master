@@ -10,8 +10,8 @@ import profilereducer from "../slices/Profileslice";
      
 const rootReducer=combineReducers({
     auth:authReducer,
-    profile:cartreducer,
-    cart:profilereducer,
+    cart:cartreducer,
+    profile:profilereducer,
     
 }) 
 export default rootReducer;

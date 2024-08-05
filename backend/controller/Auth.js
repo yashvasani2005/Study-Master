@@ -86,20 +86,20 @@ exports.signup=async(req,res)=>{
         // const profile={contactnumber,about,dateofbirth,gender};
 
         const{
-            firstname,
-            lastname,
+            firstName,
+            lastName,
             email,
             password,
             otp,
-            confirmpassword,
-            accounttype,
-            contactnumber,
+            confirmPassword,
+            accountType,
+            // contactnumber,
        
         }=req.body
-
+        console.log(req.body)
 
         // validation
-        if(!firstname || !lastname ||!email|| !password || !confirmpassword || !otp ){
+        if(!firstName || !lastName ||!email|| !password || !confirmPassword || !otp ){
             return res.status(403).json({
                 success:false,
                 message:"please fill the All the details carefully"
@@ -118,7 +118,7 @@ exports.signup=async(req,res)=>{
 
            //password validation both password must be same
            
-           if(password !== confirmpassword){
+           if(password !== confirmPassword){
             return res.status(400).json({
                 success:false,
                 message:"Password and confirmpassword value does not match,Please try again"
@@ -161,15 +161,14 @@ exports.signup=async(req,res)=>{
                 })
 
             const user=await User.create({
-                firstname,
-                lastname,
+                firstname:firstName,
+                lastname:lastName,
                 email,
                 password:hashpassword,
-                confirmpassword,
-                accounttype,
-                contactnumber,
+                accounttype:accountType,
+                // contactnumber,
                 additionaldetails:profiledetail._id,
-                image:`https://api.dicebear.com/5.x/initials/svg?seed=${firstname} ${lastname}`,
+                image:`https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
                  
 
             })
@@ -190,8 +189,6 @@ exports.signup=async(req,res)=>{
      }
 
 }
-
-
 
 // login controller
 
