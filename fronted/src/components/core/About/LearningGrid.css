@@ -1,0 +1,117 @@
+.learninggridmain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f4f8;
+  }
+  
+  .leftside, .rightside {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .leftside {
+    flex: 1 1 calc(60% - 40px); /* Wider width for the left side */
+  }
+  
+  .rightside {
+    /* flex: 1 1 calc(35% - 40px); Reduced width for the right side */
+    flex: 1 2 calc(34% - 40px);
+  }
+  
+  .leftside:hover, .rightside:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .leftside h2 {
+    /* font-size: 2rem; */
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .leftside span {
+    display: block;
+    font-size: 1.5rem;
+    color: #1f9bcf;
+    margin-bottom: 15px;
+  }
+  
+  .leftside p, .rightside p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .rightside h3 {
+    /* font-size: 1.5rem; */
+    color: #000; /* Black heading for rightside */
+    margin-bottom: 10px;
+  }
+  
+  .learninggridbutton {
+    background-color: #ad4343;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .learninggridbutton:hover {
+    background-color: #a64747;
+  }
+  
+  /* Additional Enhancements */
+  .learninggridmain {
+    background-image: radial-gradient(circle, #a64747, #1f9bcf);
+
+
+  }
+  
+  .leftside h2, .rightside h3 {
+    text-transform: uppercase;
+    /* letter-spacing: 1.2px; */
+  }
+  
+  .leftside p, .rightside p {
+    text-align: justify;
+    
+  }
+  
+  .learninggridbutton {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* .learninggridbutton:hover {
+    background-color: #159ab2;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  } */
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .leftside, .rightside {
+      flex: 1 1 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .leftside h2, .rightside h3 {
+      font-size: 1.4rem;
+    }
+  
+    .leftside p, .rightside p {
+      font-size: 0.9rem;
+    }
+  
+    .learninggridbutton {
+      padding: 8px 16px;
+    }
+  }
+  

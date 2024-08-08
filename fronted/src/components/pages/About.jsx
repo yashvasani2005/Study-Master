@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Assuming you're using react-router for navigation
 import './About.css'
+import LearningGrid from "../core/About/LearningGrid";
+import Getintouch from "../core/About/Getintouch";
 
 function About() {
     return (
@@ -39,6 +41,73 @@ function About() {
 
 
             </section>
+            {/* section 3 */}
+
+            <section className="section3">
+                        <div className="section3left">
+                              <h2>
+                                "Our Vision"
+                              </h2>
+                              <p>
+                              With this vision in mind, we set out on a journey to create an e-learning platform that would revolutionize the way people learn. Our team of dedicated experts worked tirelessly to develop a robust and intuitive platform that combines  cutting-edge technology with engaging content, fostering a dynamic and interactive learning experience.
+                              </p>
+                        </div>
+                        <div className="section3right">
+                            <h2>
+                             "Our Mission"
+                            </h2>
+                            <p>
+                            Our mission goes beyond just delivering courses online. We wanted to create a vibrant community of learners, where individuals can connect, collaborate, and learn from one another. We believe that knowledge thrives in an environment of sharing and dialogue, and we foster this spirit of collaboration through forums, live sessions, and networking opportunities. 
+                            </p>
+                        </div>
+
+            </section>
+
+            {/* section 4 */}
+
+            <section className="section4">
+                 <div className="section4main">
+                      <div className="one">
+                        <p className="above">
+                              3K
+                        </p>
+                        <p className="below">
+                             Active Students
+                        </p>
+                      </div>
+                      <div className="two">
+                        <p className="above">
+                              10+
+                        </p>
+                        <p className="below">
+                             Mentors
+                        </p>
+                      </div>
+                      <div className="three">
+                        <p className="above">
+                            100+
+                        </p>
+                        <p className="below">
+                           Courses
+                        </p>
+                      </div>
+                      <div className="four">
+                        <p className="above">
+                             20+
+                        </p>
+                        <p className="below">
+                            Awards
+                        </p>
+                      </div>
+                 </div>
+            </section>
+
+            {/* section 4 */}
+            <section className="section4">
+                <LearningGrid/>
+                <Getintouch/>
+                    
+            </section> 
 
         </div>
     );
