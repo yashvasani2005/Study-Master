@@ -32,6 +32,7 @@
 .becomeright h2 {
     font-size: 2em;
     margin-bottom: 10px;
+    text-align: center;
 }
 .headingspan{
     color: #1f9bcf;

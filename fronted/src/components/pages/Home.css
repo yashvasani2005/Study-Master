@@ -178,7 +178,7 @@ p {
     flex: 1 1 45%;
     margin: 10px;
     max-width: 35%;
-    /* text-align: center; */
+    text-align: center;
   }
   
   .skill .left h2 {
@@ -194,6 +194,7 @@ p {
     font-size: 1.3em;
     color: #000000;
     line-height: 1.5;
+    text-align: left;
   }
   .section2buttons {
     display: flex;

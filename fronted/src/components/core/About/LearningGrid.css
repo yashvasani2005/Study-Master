@@ -15,11 +15,11 @@
   }
   
   .leftside {
-    flex: 1 1 calc(60% - 40px); /* Wider width for the left side */
+    flex: 1 1 calc(60% - 40px); 
   }
   
   .rightside {
-    /* flex: 1 1 calc(35% - 40px); Reduced width for the right side */
+
     flex: 1 2 calc(34% - 40px);
   }
   
@@ -29,7 +29,7 @@
   }
   
   .leftside h2 {
-    /* font-size: 2rem; */
+
     color: #333;
     margin-bottom: 10px;
   }
@@ -49,8 +49,8 @@
   }
   
   .rightside h3 {
-    /* font-size: 1.5rem; */
-    color: #000; /* Black heading for rightside */
+  
+    color: #000; 
     margin-bottom: 10px;
   }
   
@@ -68,7 +68,7 @@
     background-color: #a64747;
   }
   
-  /* Additional Enhancements */
+
   .learninggridmain {
     background-image: radial-gradient(circle, #a64747, #1f9bcf);
 
@@ -77,7 +77,7 @@
   
   .leftside h2, .rightside h3 {
     text-transform: uppercase;
-    /* letter-spacing: 1.2px; */
+
   }
   
   .leftside p, .rightside p {
@@ -88,13 +88,7 @@
   .learninggridbutton {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
-  /* .learninggridbutton:hover {
-    background-color: #159ab2;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  } */
-  
-  /* Responsive Design */
+
   @media screen and (max-width: 768px) {
     .leftside, .rightside {
       flex: 1 1 100%;
@@ -114,4 +108,4 @@
       padding: 8px 16px;
     }
   }
-  
+   

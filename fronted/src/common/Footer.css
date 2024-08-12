@@ -1,0 +1,98 @@
+.footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: #f0f0f0; */
+    color: #333;
+
+  }
+  
+  .footer h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #000000;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+ 
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+
+  }
+  
+ 
+  
+  .footer .footersec1, .footer .footersec2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+  }
+  .footer a{
+    text-decoration: none;
+    color: #1f9bcf;
+  }
+  
+  .footer .footersec1 > div, .footer .footersec2 > div {
+    flex: 1;
+    margin:0 30px;
+  }
+  
+  .footer .footersec1 > div:last-child, .footer .footersec2 > div:last-child {
+    margin-right: 0;
+  }
+  
+  .footer .line1 img {
+    width: 15vw;
+    height: 5vw;
+    margin-right: 5px;
+
+  }
+
+  
+  /* .footer .alllogo img:last-child {
+    margin-right: 0;
+  } */
+
+  .footer .alllogo .facebook{
+   height: 3vw;
+   width: 3vw;
+  }
+  .footer .alllogo .twitter{
+    height: 3vw;
+    width: 3vw;
+  }
+  .footer .alllogo .google{
+    height: 3vw;
+    width: 3vw;
+  }
+  .footer .alllogo .youtube{
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+
+  .finalfooter p{
+ 
+        color: #000000;
+        margin: 15px 0 10px 0;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+    
+  }
+  .finalfooter img{
+    height: 2vw;
+    width: 2vw;
+
+    display: inline-flex;
+
+    align-items: center;
+    
+  }
+
