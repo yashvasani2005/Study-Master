@@ -6,8 +6,8 @@ import ContatctUs from "../../Contact/ContatctUs";
 export default function Getintouch() {
   return (
  <div>
-      <h1>Get in Touch</h1>
-      <p>We'd love to here for you, Please fill out this form. </p>
+      {/* <h1>Get in Touch</h1>
+      <p>We'd love to here for you, Please fill out this form. </p> */}
       <div>
         <ContatctUs/>
 

@@ -54,14 +54,14 @@ export default function ContatctUs() {
                                     <label className="text-blk input-title" htmlFor="FirstName">
                                         FIRST NAME
                                     </label>
-                                    <input 
-                                        className="input" 
-                                        id="FirstName" 
-                                        name="FirstName" 
-                                        placeholder="Please enter first name..." 
-                                        {...register("FirstName", { 
-                                            required: { value: true, message: "Please Enter the First Name" } 
-                                        })} 
+                                    <input
+                                        className="input"
+                                        id="FirstName"
+                                        name="FirstName"
+                                        placeholder="Please enter first name..."
+                                        {...register("FirstName", {
+                                            required: { value: true, message: "Please Enter the First Name" }
+                                        })}
                                     />
                                     {errors.FirstName && (
                                         <p className="error-message">{errors.FirstName.message}</p>
@@ -77,12 +77,12 @@ export default function ContatctUs() {
                                     <label className="text-blk input-title" htmlFor="Email">
                                         EMAIL
                                     </label>
-                                    <input type="email" className="input" id="Email" name="Email" placeholder="Please enter email..." {...register("Email", { required: {value:true,message:"Please Enter the valid Email ID"} })} />
+                                    <input type="email" className="input" id="Email" name="Email" placeholder="Please enter email..." {...register("Email", { required: { value: true, message: "Please Enter the valid Email ID" } })} />
                                     {errors.Email && (
                                         <p className="error-message">{errors.Email.message}</p>
                                     )}
                                 </div>
-                                <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                                {/* <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                                
                                     <label className="text-blk input-title" htmlFor="PhoneNumber">
 
@@ -105,16 +105,43 @@ export default function ContatctUs() {
                                     {errors.PhoneNumber && (
                                         <p className="error-message">{errors.PhoneNumber.message}</p>
                                     )}
+                                </div> */}
+                                <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                                    <label className="text-blk input-title" htmlFor="PhoneNumber">
+                                        PHONE NUMBER
+                                    </label>
+                                    <div className="dropdown">
+                                        <select name="dropdown" id="dropdown" {...register("dropdown", { required: true })} defaultValue="+91">
+                                            {
+                                                CountryCode.map((element, index) => {
+                                                    return (
+                                                        <option value={element.code} key={index}>
+                                                            {element.code} -- {element.country}
+                                                        </option>
+                                                    );
+                                                })
+                                            }
+                                        </select>
+                                    </div>
+                                    <input type="number" className="input" maxLength={10} minLength={8} id="PhoneNumber" name="PhoneNumber" placeholder="Please enter phone number..." {...register("PhoneNumber", {
+                                        required: { value: true, message: "Please Enter the Valid Mobile Number" },
+                                        maxLength: { value: 10, message: "Please enter the valid Mobile number" },
+                                        minLength: { value: 8, message: "Please enter the valid mobile number" }
+                                    })} />
+                                    {errors.PhoneNumber && (
+                                        <p className="error-message">{errors.PhoneNumber.message}</p>
+                                    )}
                                 </div>
+
                                 <div className="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i">
                                     <label className="text-blk input-title" htmlFor="message">
                                         WHAT DO YOU HAVE IN MIND
                                     </label>
-                                    <textarea className="textinput" id="message" name="message" placeholder="Please enter query..." {...register("message", { required: {value:true,message:"Please enter the message from your side"} })}></textarea>
+                                    <textarea className="textinput" id="message" name="message" placeholder="Please enter query..." {...register("message", { required: { value: true, message: "Please enter the message from your side" } })}></textarea>
                                 </div>
                                 {errors.message && (
-                                        <p className="error-message">{errors.message.message}</p>
-                                    )}
+                                    <p className="error-message">{errors.message.message}</p>
+                                )}
                             </div>
                             <button className="submit-btn" type="submit">
                                 Submit

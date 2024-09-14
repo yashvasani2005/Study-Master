@@ -4,7 +4,7 @@ const initialState={
     user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null,
     loading: false,
 }
-
+ 
 const Profileslice=createSlice({
     name:"profile",
     initialState:initialState,

@@ -15,9 +15,15 @@ const subLinks = [
     link: "/catalog/web-development",
   },
   {
+    title:"App-dev",
+    link:"/catalog/app-development"
+
+  },
+  {
     title: "Python",
     link: "/catalog/python",
   },
+
 ];
 
 function Navbar() {
