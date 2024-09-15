@@ -1,0 +1,68 @@
+/* Main container for the profile */
+.profile-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Profile header */
+.profile-title {
+    margin-bottom: 3.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #f1f5f9; /* text-richblack-5 */
+}
+
+/* Profile details section */
+.profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #1f2937; /* border-richblack-700 */
+    background-color: #0f172a; /* bg-richblack-800 */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* User info block */
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* User profile image */
+.profile-avatar {
+    aspect-ratio: 1/1;
+    width: 78px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* User name and email */
+.profile-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;
+    color: #f1f5f9; /* text-richblack-5 */
+}
+
+.profile-email {
+    font-size: 0.875rem; /* text-sm */
+    color: #9ca3af; /* text-richblack-300 */
+}
+
+/* Adjusting gap between image and name on smaller screens */
+@media (max-width: 768px) {
+    .profile-info {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .profile-card {
+      padding: 1.5rem;
+    }
+}

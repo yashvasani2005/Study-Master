@@ -1,11 +1,11 @@
 import React from "react";
 import './Sidebarlink.css';
-import * as VscIcons from "react-icons/vsc"; // Import all icons from Vsc
+import * as VscIcons from "react-icons/vsc";
 import { matchPath, NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 function Sidebarlink({ link, iconName }) {
-    const Icon = VscIcons[iconName]; // Use the correct dynamic reference for VscIcons
+    const Icon = VscIcons[iconName];
     const location = useLocation();
     const dispatch = useDispatch();
 
@@ -14,14 +14,16 @@ function Sidebarlink({ link, iconName }) {
     };
 
     return (
-        <div className="mainbodyofthesublink">
-            <NavLink to={link.path}>
-                <div className="contentoflink">
-                    {Icon ? <Icon className="icon" /> : <span className="icon-placeholder" />} {/* Handle undefined icons */}
-                    <span className="nameofthelink">{link.name}</span>
-                </div>
-            </NavLink>
-        </div>
+        <NavLink to={link.path} onClick={() => dispatch(resetCourseState())}
+            className={`sidebar-link ${matchRoute(link.path) ? "sidebar-link-active" : "sidebar-link-inactive"} transition-all duration-200`}>
+
+            <span className={`sidebar-highlight ${matchRoute(link.path) ? "highlight-active" : "highlight-inactive"}`}></span>
+
+            <div className="sidebar-link-content">
+                <Icon className="sidebar-icon" />
+                <span className="sidebar-link-text">{link.name}</span>
+            </div>
+        </NavLink>
     );
 }
 

@@ -1,31 +1,34 @@
-
 import { useSelector } from 'react-redux';
-import './Myprofile.css'
+import './MYProfile.css';
 import IconBtn from '../../../common/IconBtn';
 import { useNavigate } from 'react-router-dom';
+import { RiEditBoxLine } from 'react-icons/ri'; // Ensure the icon import
 
-function Myprofile() {
-    const { user } = useSelector((state) => state.profile)
+function MYProfile() {
+    const { user } = useSelector((state) => state.profile);
     const navigate = useNavigate();
-    return (
-        <div className='mainbodyofprofile'>
-            <h1>My-profile</h1>
-            <div className="firstbiopart">
-                <img src={user?.image} alt={`profile-${user?.firstname}`} />
-                <div>
-                    <p>{user?.firstname + " " + user?.lastname}</p>
-                    <p>{user?.email}</p>
-                </div>
-            </div>
-            <IconBtn
-                text="Edit"
-                onclick={() => {
-                    navigate("/dashboard/settings")
-                }}
-            />
-        </div>
-    )
 
+    return (
+        <div className='profile-container'>
+            <h1 className="profile-title"> My Profile </h1>
+
+            <div className="profile-card">
+
+                <div className="profile-info">
+                    <img src={user?.image} alt={`profile-${user?.firstname}`} className="profile-avatar" />
+
+                    <div className="profile-text">
+                        <p className="profile-name"> {user?.firstname + " " + user?.lastname} </p>
+                        <p className="profile-email">{user?.email}</p>
+                    </div>
+                </div>
+
+                <IconBtn text="Edit" onclick={() => { navigate("/dashboard/settings") }} >
+                    <RiEditBoxLine />
+                </IconBtn>
+            </div>
+        </div>
+    );
 }
 
-export default Myprofile;
+export default MYProfile;

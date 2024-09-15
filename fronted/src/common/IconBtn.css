@@ -1,0 +1,59 @@
+/* Icon button main class */
+.iconbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Filled button style */
+  .iconbutton-filled {
+    background-color: #facc15; /* Yellow background */
+    color: #000;
+  }
+  
+  .iconbutton-filled:hover {
+    background-color: #fbbf24; /* Darker yellow on hover */
+  }
+  
+  /* Outline button style */
+  .iconbutton-outline {
+    border: 2px solid #facc15; /* Yellow border */
+    background-color: transparent;
+    color: #facc15;
+  }
+  
+  .iconbutton-outline:hover {
+    background-color: rgba(250, 204, 21, 0.1); /* Subtle background on hover */
+  }
+  
+  /* Disabled button style */
+  .iconbutton-disabled {
+    background-color: #d1d5db; /* Gray background for disabled state */
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .iconbutton {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .iconbutton span {
+      font-size: 0.9rem;
+    }
+  
+    .iconbutton-filled, .iconbutton-outline {
+      gap: 6px;
+    }
+  }
+  
