@@ -12,12 +12,12 @@
     color: #f1f5f9; /* text-richblack-5 */
 }
 
-/* Profile details section */
+/* Section 1: Profile details card */
 .profile-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #1f2937; /* border-richblack-700 */
+    border: 2px solid #1f2937; /* border-richblack-700 */
     background-color: #0f172a; /* bg-richblack-800 */
     padding: 2rem;
     border-radius: 8px;
@@ -55,14 +55,96 @@
     color: #9ca3af; /* text-richblack-300 */
 }
 
-/* Adjusting gap between image and name on smaller screens */
+/* Section 2: About Section */
+.profile-section-2 {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #0f172a; /* bg-richblack-800 */
+    border: 2px solid #1f2937; /* border-richblack-700 */
+    border-radius: 8px;
+}
+
+.profile-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-about p {
+    font-size: 1.25rem; /* text-lg */
+    font-weight: 600;
+    color: #f1f5f9; /* text-richblack-5 */
+}
+
+.profile-addtional-details {
+    font-size: 0.875rem; /* text-sm */
+    color: #9ca3af; /* text-richblack-300 */
+}
+
+/* Section 3: Personal Details */
+.profile-personal-details {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #0f172a; /* bg-richblack-800 */
+    border: 2px solid #1f2937; /* border-richblack-700 */
+    border-radius: 8px;
+}
+
+.personal-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.personal-details p {
+    font-size: 1.25rem; /* text-lg */
+    font-weight: 600;
+    color: #f1f5f9; /* text-richblack-5 */
+}
+
+/* Updated grid layout for personal details */
+.detailscontain {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, auto); /* 3 rows */
+  column-gap: 2rem;
+}
+
+/* Styling for each detail section */
+.personal_detail_allsection {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1f2937; /* border-richblack-700 */
+}
+
+.personal_detail_allsection-p1 {
+    font-size: 1rem; /* text-sm */
+    color: #efefef; /* text-richblack-5 */
+}
+.personal_detail_allsection-p2 {
+    font-size: 1rem; /* text-sm */
+    color: #7e848f; /* text-richblack-5 */
+}
+
+/* Adjusting layout and spacing on smaller screens */
 @media (max-width: 768px) {
     .profile-info {
       flex-direction: column;
       gap: 0.5rem;
     }
   
-    .profile-card {
-      padding: 1.5rem;
+    .profile-card, .profile-section-2, .profile-personal-details {
+        padding: 1.5rem;
+    }
+
+    .detailscontain {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .personal_detail_allsection p {
+        font-size: 0.75rem; /* text-xs */
     }
 }

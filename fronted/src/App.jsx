@@ -14,7 +14,7 @@ import Updatepassword from './components/pages/Updatepassword'
 import VerifyEmail from './components/pages/VerifyEmail'
 import About from './components/pages/About'
 import Contactus from './components/pages/Contactus'
-
+import Error from './components/pages/Error'
 import MYProfile from './components/core/Dashboard/MYProfile'
 import Dashboard from './components/pages/Dashboard'
 
@@ -42,6 +42,10 @@ function App() {
           <Route path="/dashboard/my-profile" element={<MYProfile />} />
 
         </Route>
+
+        <Route path="*" element={ <Error />  } />
+
+        
 
 
 

@@ -48,7 +48,7 @@ function Sidebar() {
               btn1Text: "Logout",
               btn2Text: "Cancel",
               btn1Handler: () => dispatch(logout(navigate)),
-              btn2Handler: () => setConfirmationModal(null),
+              btn2Handler: () => setconfirmationmodel(null),
             })
           }
         >
