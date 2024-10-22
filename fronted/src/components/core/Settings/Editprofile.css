@@ -11,12 +11,13 @@
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #1f9bcf;
+    color: #fdfdfd;
   }
   
   .editprofile_section1 {
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     justify-content: center;
     border: 1px solid #ddd;
@@ -107,6 +108,68 @@
     margin-top: 10px;
   }
   
+
+/* Main container */
+.edit_profile_info {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.edit_profile_heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form grid */
+.edit_profile_form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+/* Labels and inputs */
+.edit_profile_labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit_profile_p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.edit_profile_input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Save button */
+.Edit_profile_Save_button {
+  background-color: #1f9bcf;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 100px;
+  margin-left: auto; /* Align to the right */
+}
+
+.Edit_profile_Save_button:hover {
+  background-color: #1581ad;
+}
   /* Responsive CSS */
   @media only screen and (max-width: 600px) {
     .heading_of_setting {
@@ -122,4 +185,28 @@
       width: 100%;
     }
   }
+  @media only screen and (max-width: 768px) {
+    .edit_profile_heading {
+        font-size: 1.5rem;
+    }
+
+    .edit_profile_input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .Edit_profile_Save_button {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+    .edit_profile_heading {
+        font-size: 1.2rem;
+    }
+
+    .edit_profile_input {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+}
   

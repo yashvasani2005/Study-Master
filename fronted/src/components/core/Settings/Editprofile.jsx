@@ -11,6 +11,14 @@ function Editprofile() {
   const [uploadError, setUploadError] = useState('');
   const [isUploading, setIsUploading] = useState(false); // Loading state for upload
   const { user } = useSelector((state) => state.profile);
+
+  const [firstname, setfirstname] = useState(user?.firstname || '');
+  const [lastname, setlastname] = useState(user?.lastname || '');
+  const [email, setemail] = useState(user?.email || '');
+  const [gender, setgender] = useState(user?.gender || '');
+  const [dob, setdob] = useState(user?.dob || '');
+  const [contactno, setcontactno] = useState(user?.contactno || '');
+
   const navigate = useNavigate();
 
   // Handle file input change
@@ -25,32 +33,59 @@ function Editprofile() {
   // Handle file upload
   const handleOnClick = async () => {
     if (!image) {
-        setUploadError('Please select a file to upload');
-        return;
+      setUploadError('Please select a file to upload');
+      return;
     }
 
     const formData = new FormData();
     formData.append('image', image); // Ensure the key matches with the backend
 
     try {
-        setIsUploading(true); // Set loading state
-        const response = await axios.post('http://localhost:4000/api/upload', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
+      setIsUploading(true); // Set loading state
+      const response = await axios.post('http://localhost:4000/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
 
-        if (response.status === 200) {
-            alert('File uploaded successfully!');
-            // Additional logic for handling successful upload
-        }
+      if (response.status === 200) {
+        alert('File uploaded successfully!');
+        // Additional logic for handling successful upload
+      }
     } catch (error) {
-        console.error('Upload error:', error);
-        setUploadError('Upload failed: ' + error.response?.data?.error || 'Unknown error');
+      console.error('Upload error:', error);
+      setUploadError('Upload failed: ' + error.response?.data?.error || 'Unknown error');
     } finally {
-        setIsUploading(false); // Reset loading state
+      setIsUploading(false); // Reset loading state
     }
-};
+  };
+
+  // Handle form submission to update profile details
+  const submithandle = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:4000/api/v1/profile/updateProfile?_method=PUT', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ firstname, lastname, email, dob, contactno, gender })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('Data saved successfully');
+        // Optionally, navigate to another page or update the profile in the redux store
+      } else {
+        alert('Error saving data: ' + data.message);
+      }
+    } catch (error) {
+      console.error('Error saving data:', error);
+      alert('Error saving data. Please try again later.');
+    }
+  };
 
   return (
     <div className="main_body_of_Editprofile">
@@ -65,7 +100,7 @@ function Editprofile() {
         )}
 
         <p className="editprofile_section1_p">Change Profile Picture</p>
-        
+
         {/* File input */}
         <input 
           type="file" 
@@ -88,6 +123,72 @@ function Editprofile() {
         
         {/* Error message display */}
         {uploadError && <p className="error_message">{uploadError}</p>}
+      </div>
+
+      {/* Section 2: Edit Profile Information */}
+      <div className="edit_profile_info">
+        <h1 className="edit_profile_heading">Profile Information</h1>
+        <form className="edit_profile_form" onSubmit={submithandle}>
+          <div className="edit_profile_labels">
+            <p className="edit_profile_p">First Name</p>
+            <input 
+              type="text" 
+              className="edit_profile_input" 
+              value={firstname} 
+              onChange={(e) => setfirstname(e.target.value)} 
+            />
+          </div>
+          <div className="edit_profile_labels">
+            <p className="edit_profile_p">Last Name</p>
+            <input 
+              type="text" 
+              value={lastname} 
+              onChange={(e) => setlastname(e.target.value)} 
+              className="edit_profile_input" 
+            />
+          </div>
+          <div className="edit_profile_labels">
+            <p className="edit_profile_p">Email</p>
+            <input 
+              type="email" 
+              className="edit_profile_input" 
+              value={email} 
+              onChange={(e) => setemail(e.target.value)} 
+            />
+          </div>
+          <div className="edit_profile_labels">
+            <p className="edit_profile_p">Date of Birth</p>
+            <input 
+              type="date" 
+              className="edit_profile_input" 
+              value={dob}  
+              onChange={(e) => setdob(e.target.value)} 
+            />
+          </div>
+          <div className="edit_profile_labels">
+            <p className="edit_profile_p">Contact Number</p>
+            <input 
+              type="number" 
+              className="edit_profile_input" 
+              value={contactno} 
+              onChange={(e) => setcontactno(e.target.value)} 
+            />
+          </div>
+          <div className="edit_profile_labels">
+            <p className="edit_profile_p">Gender</p>
+            <input 
+              type="text" 
+              className="edit_profile_input" 
+              value={gender} 
+              onChange={(e) => setgender(e.target.value)} 
+            />
+          </div>
+
+          {/* Submit button */}
+          <button className="Edit_profile_Save_button" type="submit">
+            Save
+          </button>
+        </form>
       </div>
     </div>
   );

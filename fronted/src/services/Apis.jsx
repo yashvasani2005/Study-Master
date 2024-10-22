@@ -28,4 +28,7 @@ export const endpoints = {
 
   RESETPASSTOKEN_API: `${BASE_URL}/api/v1/auth/reset-password-token`,
   RESETPASSWORD_API: `${BASE_URL}/api/v1/auth/reset-password`,
+
+  UPDATE_PROFILE:`${BASE_URL}/api/v1/profile/updateProfile`
+  
 };
