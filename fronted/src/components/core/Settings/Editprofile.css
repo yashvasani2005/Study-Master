@@ -1,212 +1,104 @@
-.main_body_of_Editprofile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .heading_of_setting {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fdfdfd;
-  }
-  
-  .editprofile_section1 {
-    display: flex;
-    flex-direction: column;
-    
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    width: 90%;
-    max-width: 500px;
-  }
-  
-  .log_of_section1 {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
-  .editprofile_section1_p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  label[for="file-upload"] {
-    background-color: #1f9bcf;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    display: inline-block; /* Ensure it behaves like a button */
-  }
-  
-  label[for="file-upload"]:hover {
-    background-color: #1581ad;
-  }
-  
-  input[type="file"] {
-    /* display: none;  */
-  }
-  
-  /* Custom file input button */
-  .input_of_choosefile {
-    background-color: #1f9bcf;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    border: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .input_of_choosefile:hover {
-    background-color: #1581ad;
-  }
-  
-  /* Upload button */
-  .editprofile_section1_button2 {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .editprofile_section1_button2:disabled {
-    background-color: #ccc;
-  }
-  
-  .editprofile_section1_button2:hover:enabled {
-    background-color: #218838;
-  }
-  
-  .upload_icon {
-    margin-top: 10px;
-    font-size: 1.5rem;
-    color: #1f9bcf;
-  }
-  
-  /* Error message */
-  .error_message {
-    color: red;
-    margin-top: 10px;
-  }
-  
-
-/* Main container */
-.edit_profile_info {
+.edit_profile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
+.edit_profile_info {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  transition: max-width 0.3s ease;
+
+}
+.edit_profile_form{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 100px;
+}
+/* Grid for 3 rows and 2 columns */
+
 .edit_profile_heading {
-  font-size: 2rem;
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #000000;
 }
 
-/* Form grid */
-.edit_profile_form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-}
-
-/* Labels and inputs */
 .edit_profile_labels {
   display: flex;
   flex-direction: column;
 }
 
 .edit_profile_p {
-  font-size: 1rem;
+  font-size: 16px;
   margin-bottom: 8px;
-  color: #555;
+  color: #000000;
+  font-weight: 500;
 }
 
 .edit_profile_input {
+  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-/* Save button */
-.Edit_profile_Save_button {
+.edit_profile_input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.edit_profile_save_button {
+  padding: 12px 0;
   background-color: #1f9bcf;
   color: white;
-  padding: 10px 20px;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  display: block;
-  width: 100px;
-  margin-left: auto; /* Align to the right */
+  width: 100%; /* Full width button */
 }
 
-.Edit_profile_Save_button:hover {
-  background-color: #1581ad;
+.edit_profile_save_button:hover {
+  background-color: #1888a8;
 }
-  /* Responsive CSS */
-  @media only screen and (max-width: 600px) {
-    .heading_of_setting {
-      font-size: 2rem;
-    }
-  
-    .log_of_section1 {
-      width: 120px;
-      height: 120px;
-    }
-  
-    .editprofile_section1 {
-      width: 100%;
-    }
+
+/* Responsive Design */
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .edit_profile_info {
+    max-width: 100%;
+    padding: 20px;
   }
-  @media only screen and (max-width: 768px) {
-    .edit_profile_heading {
-        font-size: 1.5rem;
-    }
 
-    .edit_profile_input {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-    .Edit_profile_Save_button {
-      width: 100%;
+  .edit_profile_form{
+    display: flex;
+    flex-direction: column;
+
   }
 }
 
-@media only screen and (max-width: 480px) {
-    .edit_profile_heading {
-        font-size: 1.2rem;
-    }
-
-    .edit_profile_input {
-        font-size: 0.85rem;
-        padding: 6px;
-    }
+/* For tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .edit_profile_info {
+    max-width: 700px;
+  }
 }
-  
+
+/* For larger laptops and desktops */
+@media (min-width: 1025px) {
+  .edit_profile_info {
+    max-width: 900px;
+    padding: 40px;
+  }
+}

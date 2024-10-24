@@ -7,7 +7,7 @@ import { RiEditBoxLine } from 'react-icons/ri'; // Ensure the icon import
 function MYProfile() {
     const { user } = useSelector((state) => state.profile);
     const navigate = useNavigate();
-
+//    console.log("Date dfdfdff",user )
     return (
 
         <div className='profile-container'>
@@ -19,7 +19,7 @@ function MYProfile() {
 
                 <div className="profile-info">
                     <img src={user?.image} alt={`profile-${user?.firstname}`} className="profile-avatar" />
-
+             
                     <div className="profile-text">
                         <p className="profile-name"> {user?.firstname + " " + user?.lastname} </p>
                         <p className="profile-email">{user?.email}</p>

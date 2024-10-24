@@ -17,7 +17,8 @@ import Contactus from './components/pages/Contactus'
 import Error from './components/pages/Error'
 import MYProfile from './components/core/Dashboard/MYProfile'
 import Dashboard from './components/pages/Dashboard'
-import Editprofile from './components/core/Settings/Editprofile'
+// import Editprofile from './components/core/Settings/Editprofile'
+import Mainbody from './components/core/Settings/Mainbody'
 
 
 
@@ -41,7 +42,7 @@ function App() {
         <Route element={<Privaterout> <Dashboard />  </Privaterout>} >
 
           <Route path="/dashboard/my-profile" element={<MYProfile />} />
-          <Route path="/dashboard/settings" element={<Editprofile />} />
+          <Route path="/dashboard/settings" element={<Mainbody />} />
 
         </Route>
 
