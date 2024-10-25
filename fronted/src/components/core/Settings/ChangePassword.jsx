@@ -1,95 +1,112 @@
 import { useState } from 'react';
 import './ChangePassword.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { changePassword } from '../../../services/operations/SettingAPi';
-import { toast } from 'react-hot-toast'; // To display toast messages
+import IconBtn from "../../../common/IconBtn"
+import { useNavigate } from "react-router-dom"
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+import { useForm } from "react-hook-form"
 
 function ChangePassword() {
-    const [currentPassword, setCurrentPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const { token } = useSelector((state) => state.auth);
-    const dispatch = useDispatch();
-
-    const handleCancel = () => {
-        setCurrentPassword('');
-        setNewPassword('');
-        setConfirmPassword(''); // Reset confirm password as well
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    const navigate = useNavigate();
+    const [showOldPassword, setShowOldPassword] = useState(false);
+    const [showNewPassword, setShowNewPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
+    const { register, handleSubmit, formState: { errors }, watch } = useForm(); // Add watch here
+      
+    const submitPasswordForm = async (data) => {
         // Check if new password and confirm password match
-        if (newPassword !== confirmPassword) {
-            toast.error("New password and confirm password do not match");
-            return; // Stop form submission if passwords do not match
+        if (data.newPassword !== data.confirmPassword) {
+          toast.error("New password and confirm password do not match");
+          return;
         }
-
-        const data = {
-            oldPassword: currentPassword,
-            newPassword,
+      
+        // Use correct field name here
+        const formData = {
+          oldPassword: data.oldPassword,
+          newPassword: data.newPassword,
+          confirmNewPassword: data.confirmPassword // Change here
         };
-
-        if (token) {
-            try {
-                await dispatch(changePassword(token, data)); // Dispatch the action
-            } catch (error) {
-                console.error("Error in handleSubmit in ChangePassword:", error);
-            }
-        } else {
-            console.error("No token available for the user.");
+      
+        try {
+          await changePassword(token, formData);
+          toast.success("Password Changed Successfully");
+        } catch (error) {
+          console.log("ERROR MESSAGE - ", error.message);
         }
-    };
+      };
 
     return (
-        <div className="Change-password-container">
-            <h2 className="Change_Password_h2">Change Password</h2>
+        <form onSubmit={handleSubmit(submitPasswordForm)}>
+            <div className="password-form-container">
+                <h2 className="form-heading">Password</h2>
+                <div className="password-input-group">
+                    <div className="password-field">
+                        <label htmlFor="oldPassword" className="label-style">Current Password</label>
+                        <input
+                            type={showOldPassword ? "text" : "password"}
+                            name="oldPassword"
+                            id="oldPassword"
+                            placeholder="Enter Current Password"
+                            className="input-style"
+                            {...register("oldPassword", { required: true })}
+                        />
+                        <span onClick={() => setShowOldPassword((prev) => !prev)} className="toggle-password-visibility">
+                            {showOldPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                        </span>
+                        {errors.oldPassword && (
+                            <span className="error-message">Please enter your Current Password.</span>
+                        )}
+                    </div>
 
-            <form className="Change-Password-alldiv_form" onSubmit={handleSubmit}>
-                <label htmlFor="oldPassword" className="current_password">Current Password</label>
-                <input
-                    name="oldPassword"
-                    id="oldPassword"
-                    type="password"
-                    placeholder="Enter Old Password"
-                    className="current_password_input"
-                    value={currentPassword}
-                    onChange={(e) => setCurrentPassword(e.target.value)}
-                />
+                    <div className="password-field">
+                        <label htmlFor="newPassword" className="label-style">New Password</label>
+                        <input
+                            type={showNewPassword ? "text" : "password"}
+                            name="newPassword"
+                            id="newPassword"
+                            placeholder="Enter New Password"
+                            className="input-style"
+                            {...register("newPassword", { required: true })}
+                        />
+                        <span onClick={() => setShowNewPassword((prev) => !prev)} className="toggle-password-visibility">
+                            {showNewPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                        </span>
+                        {errors.newPassword && (
+                            <span className="error-message">Please enter your New Password.</span>
+                        )}
+                    </div>
 
-                <label htmlFor="newPassword" className="new_password">New Password</label>
-                <input
-                    name="newPassword"
-                    id="newPassword"
-                    type="password"
-                    placeholder="Enter New Password"
-                    className="new_password_input"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                />
-
-                <label htmlFor="confirmPassword" className="confirm_password">Confirm Password</label>
-                <input
-                    name="confirmPassword"
-                    id="confirmPassword"
-                    type="password"
-                    placeholder="Confirm New Password"
-                    className="confirm_password_input"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-
-                <div className="change_password_allbuttons">
-                    <button type="submit">
-                        Update
-                    </button>
-                    <button type="button" onClick={handleCancel}>
-                        Cancel
-                    </button>
+                    <div className="password-field">
+                        <label htmlFor="confirmPassword" className="label-style">Confirm New Password</label>
+                        <input
+                            type={showConfirmPassword ? "text" : "password"}
+                            name="confirmPassword"
+                            id="confirmPassword"
+                            placeholder="Confirm New Password"
+                            className="input-style"
+                            {...register("confirmPassword", {
+                                required: true,
+                                validate: value => value === watch('newPassword') || "Passwords do not match"
+                            })}
+                        />
+                        <span onClick={() => setShowConfirmPassword((prev) => !prev)} className="toggle-password-visibility">
+                            {showConfirmPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                        </span>
+                        {errors.confirmPassword && (
+                            <span className="error-message">{errors.confirmPassword.message}</span>
+                        )}
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
+
+            <div className="form-actions">
+                <button type="button" onClick={() => navigate("/dashboard/my-profile")}>Cancel</button>
+                <IconBtn type="submit" text="Update" />
+            </div>
+        </form>
     );
 }
 

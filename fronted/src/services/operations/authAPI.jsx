@@ -4,7 +4,7 @@ import { resetCart } from "../../slices/Cartslice";
 import { setUser } from "../../slices/Profileslice";
 import {ApiConnector} from "../Apiconnector"
 import { endpoints } from "../Apis";
-
+import Cookies from "js-cookie";
 /*
  const response = await apiConnector("POST", LOGIN_API, {
         email,
@@ -15,7 +15,7 @@ import { endpoints } from "../Apis";
  
 */
 
-const { SENDOTP_API, SIGNUP_API, LOGIN_API, RESETPASSTOKEN_API, RESETPASSWORD_API } = endpoints;
+const { SENDOTP_API, SIGNUP_API, LOGIN_API, RESETPASSTOKEN_API, RESETPASSWORD_API, LOGOUT_API } = endpoints;
 
 export function sendOtp(email, navigate) {
   return async (dispatch) => {
@@ -73,8 +73,10 @@ export function login(email, password, navigate) {
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
+      console.log("your reponse is here::",response);
       toast.success("Login Successful");
       dispatch(setToken(response.data.token));
+      
       const userImage = response.data?.user?.image ? response.data.user.image : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`;
       dispatch(setUser({ ...response.data.user, image: userImage }));
 
@@ -91,14 +93,26 @@ export function login(email, password, navigate) {
 }
 
 export function logout(navigate) {
-  return (dispatch) => {
-    dispatch(setToken(null));
-    dispatch(setUser(null));
-    dispatch(resetCart());
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    toast.success("Logged Out");
-    navigate("/");
+  return async (dispatch) => {
+    try {
+      // Call the logout API endpoint
+      await ApiConnector("POST", LOGOUT_API);
+      
+      // Clear local storage
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      
+      // Clear Redux state
+      dispatch(setToken(null));
+      dispatch(setUser(null));
+      dispatch(resetCart());
+
+      toast.success("Logged Out");
+      navigate("/");
+    } catch (error) {
+      console.log("Logout error:", error);
+      toast.error("Logout failed");
+    }
   };
 }
 

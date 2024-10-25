@@ -10,7 +10,7 @@ const Profileslice=createSlice({
     initialState:initialState,
     reducers:{
         setUser(state,value){
-            state.token=value.payload;
+            state.user=value.payload;
         },
         setLoading(state, value) {
             state.loading = value.payload;
