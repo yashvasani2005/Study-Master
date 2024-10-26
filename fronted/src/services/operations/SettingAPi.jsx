@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast"
 import { settingsEndpoints } from "../Apis"
 import { ApiConnector } from "../Apiconnector"
 import { setUser } from "../../slices/Profileslice"
+import { logout } from "./authAPI"
 import { configureStore } from "@reduxjs/toolkit"
 
 
@@ -39,7 +40,7 @@ export function updateProfile(token, formdata){
       const toastID=toast.loading("Loaading..")
         
       try{
-        const response = await ApiConnector("PUT", CHANGE_PASSWORD_API, formdata, { Authorization: `Bearer ${token}`, })
+        const response = await ApiConnector("PUT", UPDATE_PROFILE_API, formdata, { Authorization: `Bearer ${token}`, })
         console.log("UPDATE_PROFILE_API API RESPONSE............", response)
   
         if(!response.data.success) {
@@ -80,4 +81,25 @@ export async function changePassword(token, formdata){
     }
     toast.dismiss(toastId)
  }  
+
  
+ export function deleteProfile(token, navigate) {
+  return async (dispatch) => {
+    const toastId = toast.loading("Loading...")
+    try {
+      const response = await ApiConnector("DELETE", DELETE_PROFILE_API, null, {Authorization: `Bearer ${token}`, })
+      console.log("DELETE_PROFILE_API API RESPONSE............", response)
+
+      if (!response.data.success) {
+        throw new Error(response.data.message)
+      }
+      toast.success("Profile Deleted Successfully")
+      dispatch(logout(navigate))
+    }
+     catch (error) {
+      console.log("DELETE_PROFILE_API API ERROR............", error)
+      toast.error("Could Not Delete Profile")
+    }
+    toast.dismiss(toastId)
+  }
+}

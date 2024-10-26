@@ -40,20 +40,20 @@ function ChangePassword() {
 
     return (
         <form onSubmit={handleSubmit(submitPasswordForm)}>
-            <div className="password-form-container">
-                <h2 className="form-heading">Password</h2>
-                <div className="password-input-group">
-                    <div className="password-field">
-                        <label htmlFor="oldPassword" className="label-style">Current Password</label>
+            <div className="chnagepassword-form-container">
+                <h2 className="chnagepassword_form-heading">Password</h2>
+                <div className="chnagepassword-input-group">
+                    <div className="chnagepassword-field">
+                        <label htmlFor="oldPassword" className="chnagepassword_label-style">Current Password</label>
                         <input
                             type={showOldPassword ? "text" : "password"}
                             name="oldPassword"
                             id="oldPassword"
                             placeholder="Enter Current Password"
-                            className="input-style"
+                            className="chnagepassword_input-style"
                             {...register("oldPassword", { required: true })}
                         />
-                        <span onClick={() => setShowOldPassword((prev) => !prev)} className="toggle-password-visibility">
+                        <span onClick={() => setShowOldPassword((prev) => !prev)} className="toggle-chnagepassword-visibility">
                             {showOldPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                         </span>
                         {errors.oldPassword && (
@@ -61,17 +61,17 @@ function ChangePassword() {
                         )}
                     </div>
 
-                    <div className="password-field">
-                        <label htmlFor="newPassword" className="label-style">New Password</label>
+                    <div className="chnagepassword-field">
+                        <label htmlFor="newPassword" className="chnagepassword_label-style">New Password</label>
                         <input
                             type={showNewPassword ? "text" : "password"}
                             name="newPassword"
                             id="newPassword"
                             placeholder="Enter New Password"
-                            className="input-style"
+                            className="chnagepassword_input-style"
                             {...register("newPassword", { required: true })}
                         />
-                        <span onClick={() => setShowNewPassword((prev) => !prev)} className="toggle-password-visibility">
+                        <span onClick={() => setShowNewPassword((prev) => !prev)} className="toggle-chnagepassword-visibility">
                             {showNewPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                         </span>
                         {errors.newPassword && (
@@ -80,32 +80,33 @@ function ChangePassword() {
                     </div>
 
                     <div className="password-field">
-                        <label htmlFor="confirmPassword" className="label-style">Confirm New Password</label>
+                        <label htmlFor="confirmPassword" className="chnagepassword_label-style">Confirm New Password</label>
                         <input
                             type={showConfirmPassword ? "text" : "password"}
                             name="confirmPassword"
                             id="confirmPassword"
                             placeholder="Confirm New Password"
-                            className="input-style"
+                            className="chnagepassword_input-style"
                             {...register("confirmPassword", {
                                 required: true,
                                 validate: value => value === watch('newPassword') || "Passwords do not match"
                             })}
                         />
-                        <span onClick={() => setShowConfirmPassword((prev) => !prev)} className="toggle-password-visibility">
+                        <span onClick={() => setShowConfirmPassword((prev) => !prev)} className="toggle-chnagepassword-visibility">
                             {showConfirmPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                         </span>
                         {errors.confirmPassword && (
-                            <span className="error-message">{errors.confirmPassword.message}</span>
+                            <span className="chnagepassword_error-message">{errors.confirmPassword.message}</span>
                         )}
                     </div>
                 </div>
-            </div>
-
-            <div className="form-actions">
+                <div className="form-actions">
                 <button type="button" onClick={() => navigate("/dashboard/my-profile")}>Cancel</button>
                 <IconBtn type="submit" text="Update" />
             </div>
+            </div>
+
+       
         </form>
     );
 }

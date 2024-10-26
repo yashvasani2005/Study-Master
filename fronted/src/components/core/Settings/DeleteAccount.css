@@ -1,0 +1,118 @@
+/* DeleteAccount.css */
+
+/* Container for the entire delete account section */
+.delete-account-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid #e57373; /* Light pinkish border */
+    background-color: #ffe5e5; /* Light pink background */
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .delete-account-container:hover {
+    box-shadow: 0 8px 16px rgba(229, 115, 115, 0.3); /* Subtle shadow on hover */
+  }
+  
+  /* Icon container styling */
+  .delete-account-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e57373; /* Soft pink color */
+  }
+  
+  .delete-trash-icon {
+    font-size: 1.75rem;
+    color: #ffebee; /* Light pink icon color */
+  }
+  
+  /* Text container styling */
+  .delete-text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .delete-account-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b71c1c; /* Darker red for title */
+  }
+  
+  .delete-account-message {
+    color: #d32f2f; /* Mid-tone red for message text */
+    line-height: 1.6;
+  }
+  
+  .delete-account-button {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #b71c1c;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #000000; /* Adds the underline */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .delete-account-button:hover {
+    color: #d32f2f; /* Darker red on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .delete-account-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  
+    .delete-account-icon-container {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .delete-account-title {
+      font-size: 1.25rem;
+    }
+  
+    .delete-account-message {
+      font-size: 0.9rem;
+    }
+  
+    .delete-account-button {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .delete-account-container {
+      padding: 1rem;
+    }
+  
+    .delete-account-title {
+      font-size: 1.1rem;
+    }
+  
+    .delete-account-message {
+      font-size: 0.85rem;
+    }
+  
+    .delete-account-button {
+      font-size: 0.8rem;
+    }
+  }
+  

@@ -21,7 +21,7 @@
 .dashboard-content {
     flex: 1;
     /* margin-left: 250px;  */
-    background-color: #fabebe; /* Background color for the main content */
+    background-color: #000000; /* Background color for the main content */
     height: 100%;
     overflow: auto;
 }

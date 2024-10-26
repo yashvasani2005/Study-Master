@@ -3,6 +3,7 @@ import './Mainbody.css';
 import Editprofile from './Editprofile';
 import UpdateProfilepicture from './UpdateProfilepicture';
 import ChangePassword from './ChangePassword';
+import DeleteAccount from './DeleteAccount';
 
 
 function Mainbody() {
@@ -18,6 +19,9 @@ function Mainbody() {
       <Editprofile/>
       {/* swection 3 chnage the passsword */}
 <ChangePassword/>
+
+  {/* section 4 delete or remove the account */}
+  <DeleteAccount/>
 
     </div> 
   );

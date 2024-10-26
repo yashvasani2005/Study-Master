@@ -17,8 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid #1f2937; /* border-richblack-700 */
-    background-color: #0f172a; /* bg-richblack-800 */
+    border: 2px solid #ffffff; /* border-richblack-700 */
+    background-color: #34373d; /* bg-richblack-800 */
     padding: 2rem;
     border-radius: 8px;
 }
@@ -59,8 +59,8 @@
 .profile-section-2 {
     margin-top: 2rem;
     padding: 2rem;
-    background-color: #0f172a; /* bg-richblack-800 */
-    border: 2px solid #1f2937; /* border-richblack-700 */
+    background-color: #34373d; /* bg-richblack-800 */
+    border: 2px solid #ffffff; /* border-richblack-700 */
     border-radius: 8px;
 }
 
@@ -86,8 +86,8 @@
 .profile-personal-details {
     margin-top: 2rem;
     padding: 2rem;
-    background-color: #0f172a; /* bg-richblack-800 */
-    border: 2px solid #1f2937; /* border-richblack-700 */
+    background-color: #34373d; /* bg-richblack-800 */
+    border: 2px solid #ffffff; /* border-richblack-700 */
     border-radius: 8px;
 }
 

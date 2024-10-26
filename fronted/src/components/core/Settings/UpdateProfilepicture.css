@@ -3,8 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #2e2e2e;
-    background-color: #d21a1a;
+    border: 1px solid #dbdbdb;
+    background-color: #34373d;
     padding: 2rem;
     border-radius: 10px;
     width: 100%;
@@ -21,8 +21,9 @@
     justify-content: center;
     gap: 5rem;
     margin: 45px auto;
-    background-color: #fff;
+    background-color: #34373d;
     padding: 10px;
+    border: 2px solid white;
     width: 80%;
     border-radius: 5px  ;
   }
@@ -44,7 +45,7 @@
   
   .profile-label {
     font-size: 1.6rem;
-    color: #000000;
+    color: #ffffff;
     font-weight: 800;
   }
   
