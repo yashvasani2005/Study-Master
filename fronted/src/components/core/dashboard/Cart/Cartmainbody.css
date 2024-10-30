@@ -1,0 +1,198 @@
+/* Main container styling */
+.cart-mainbody {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading and paragraph styling */
+.cart-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.cart-paragraph {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Cart components grid layout */
+.cart-components {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-leftside {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual cart item styling */
+.cart-item {
+    display: flex;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Course details */
+.cart-item-details {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.course-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.course-category {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Rating and review styling */
+.course-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.rating-stars {
+    display: inline-flex;
+    margin-left: 5px;
+}
+
+/* Price and remove button */
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.remove-button {
+    display: flex;
+    align-items: center;
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Price styling */
+.course-price {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #222;
+    font-weight: bold;
+}
+
+.price-symbol {
+    margin-right: 5px;
+}
+
+/* Right side (total and buy now button) */
+.cart-rightside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #e8f7ff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total-label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cart-total-price {
+    font-size: 1.5rem;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+.total-symbol {
+    margin-right: 5px;
+}
+
+/* Buy Now button */
+.buy-now-btn {
+    background-color: #1a73e8;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #1669c2;
+}
+
+/* Empty cart message */
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    padding: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .cart-components {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-item-image img {
+        width: 80px;
+    }
+
+    .cart-item-details {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .cart-rightside {
+        width: 100%;
+    }
+}

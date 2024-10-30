@@ -1,0 +1,155 @@
+/* Container for the table */
+.coursesTable {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    overflow: hidden;
+  }
+  
+  /* Header styling */
+  .coursesTableHeaderRow {
+    background-color: #222;
+    color: #ccc;
+  }
+  
+  .coursesTableHeaderCell {
+    padding: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  /* No courses message */
+  .noCoursesMessage {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #ccc;
+  }
+  
+  /* Course row styling */
+  .courseRow {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s;
+  }
+  
+  .courseRow:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .courseInfo {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+  }
+  
+  .courseThumbnail {
+    width: 220px;
+    height: 148px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .courseDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .courseName {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .courseDescription {
+    font-size: 0.875rem;
+    color: #aaa;
+  }
+  
+  .courseDate {
+    font-size: 0.75rem;
+    color: #888;
+  }
+  
+  .courseStatusDraft,
+  .courseStatusPublished {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: #333;
+  }
+  
+  .courseStatusDraft {
+    color: #e9a6a6;
+  }
+  
+  .courseStatusPublished {
+    color: #f0e68c;
+  }
+  
+  .statusIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0e68c;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Course data cells */
+  .courseDuration,
+  .coursePrice {
+    font-size: 0.875rem;
+    color: #ccc;
+    padding: 0 1rem;
+  }
+  
+  .courseActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .editButton,
+  .deleteButton {
+    padding: 0.25rem;
+    font-size: 1rem;
+    color: #ccc;
+    transition: transform 0.2s, color 0.2s;
+  }
+  
+  .editButton:hover {
+    color: #1e90ff;
+    transform: scale(1.1);
+  }
+  
+  .deleteButton:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .courseRow {
+      flex-direction: column;
+    }
+  
+    .courseInfo {
+      flex-direction: column;
+    }
+  
+    .courseThumbnail {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

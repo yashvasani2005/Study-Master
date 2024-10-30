@@ -1,0 +1,121 @@
+/* EnrolledCourses.css */
+
+.Enrolledcourses_heading {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.EnrollrdCourse_nocourses_pragraph {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+}
+
+.EnrolledCourses_section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Enrolledcourses_titlesection {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    font-size: 1.1rem;
+}
+
+.enrolledcourses_cardsection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.enrolledCourses_allcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.enrolledCourses_allcard:hover {
+    transform: translateY(-4px);
+}
+
+.enrolledcourses_section_cardName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 2;
+}
+
+.enrolledcourses_section_cardName_left img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.enrolledcourses_section_cardName_right p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.enrolledcourses_section_cardName_right p:first-child {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.enrolledcourses_section_Duration,
+.enrolledcourses_section_Progress {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.enrolledcourses_section_Progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enrolledcourses_section_Progress p {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .Enrolledcourses_titlesection {
+        font-size: 0.9rem;
+    }
+
+    .enrolledCourses_allcard {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .enrolledcourses_section_cardName, 
+    .enrolledcourses_section_Duration, 
+    .enrolledcourses_section_Progress {
+        width: 100%;
+        text-align: left;
+    }
+}
