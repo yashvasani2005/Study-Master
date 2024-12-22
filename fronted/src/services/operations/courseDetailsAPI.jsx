@@ -26,7 +26,7 @@ const {
 
 export const fetchInstructorCourses = async (token) => {
     let result = []
-   // const toastId = toast.loading("Loading...")
+   //const toastId = toast.loading("Loading...")
     try {
       const response = await ApiConnector( "GET",  GET_ALL_INSTRUCTOR_COURSES_API, null, {Authorization: `Bearer ${token}`,} )
       console.log("INSTRUCTOR COURSES API RESPONSE............", response)
@@ -40,7 +40,7 @@ export const fetchInstructorCourses = async (token) => {
       console.log("INSTRUCTOR COURSES API ERROR............", error)
       toast.error(error.message)
     }
-   // toast.dismiss(toastId)
+    // toast.dismiss(toastId)
     return result
   }
   
@@ -59,6 +59,41 @@ export const fetchInstructorCourses = async (token) => {
     } 
     catch (error) {
       console.log("DELETE COURSE API ERROR............", error)
+      toast.error(error.message)
+    }
+    toast.dismiss(toastId)
+  }
+  export const fetchCourseCategories = async () => {
+    let result = []
+    try {
+      const response = await ApiConnector("GET", COURSE_CATEGORIES_API)
+      console.log("COURSE_CATEGORIES_API API RESPONSE............", response)
+  
+      if (!response?.data?.success) {
+        throw new Error("Could Not Fetch Course Categories")
+      }
+      result = response?.data?.data
+    }
+     catch (error) {
+      console.log("COURSE_CATEGORY_API API ERROR............", error)
+      toast.error(error.message)
+    }
+    return result
+  }
+
+  export const editcourse = async (data, token) => {
+    const toastId = toast.loading("Loading...")
+    try {
+      const response = await ApiConnector("DELETE",EDIT_COURSE_API , data, {Authorization: `Bearer ${token}`, })
+      console.log("Edit COURSE API RESPONSE............", response)
+  
+      if(!response?.data?.success) {
+        throw new Error("Could Not Edit Course")
+      }
+      toast.success("Course Edited Successsfully")
+    } 
+    catch (error) {
+      console.log("Edit COURSE API ERROR............", error)
       toast.error(error.message)
     }
     toast.dismiss(toastId)
