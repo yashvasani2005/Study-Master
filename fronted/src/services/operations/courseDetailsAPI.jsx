@@ -84,7 +84,7 @@ export const fetchInstructorCourses = async (token) => {
   export const editcourse = async (data, token) => {
     const toastId = toast.loading("Loading...")
     try {
-      const response = await ApiConnector("DELETE",EDIT_COURSE_API , data, {Authorization: `Bearer ${token}`, })
+      const response = await ApiConnector("POST",EDIT_COURSE_API , data, {Authorization: `Bearer ${token}`, })
       console.log("Edit COURSE API RESPONSE............", response)
   
       if(!response?.data?.success) {
@@ -98,3 +98,25 @@ export const fetchInstructorCourses = async (token) => {
     }
     toast.dismiss(toastId)
   }
+
+  // add the course details
+export const addCourseDetails = async (data, token) => {
+  let result = null
+  const toastId = toast.loading("Loading...")
+  try {
+    const response = await ApiConnector("POST", CREATE_COURSE_API, data, { "Content-Type": "multipart/form-data",   Authorization: `Bearer ${token}`, })
+    console.log("CREATE COURSE API RESPONSE............", response)
+
+    if (!response?.data?.success) {
+      throw new Error("Could Not Add Course Details")
+    }
+    toast.success("Course Details Added Successfully")
+    result = response?.data?.data
+  }
+   catch (error) {
+    console.log("CREATE COURSE API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+  return result
+}

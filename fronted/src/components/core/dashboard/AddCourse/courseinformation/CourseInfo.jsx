@@ -10,6 +10,8 @@ import RequirementsField from "./RequirementsField";
 import { setCourse,setStep } from "../../../../../slices/Courseslice";
 import IconBtn from "../../../../../common/IconBtn";
 import { editcourse } from "../../../../../services/operations/courseDetailsAPI";
+import { COURSE_STATUS } from "../../../../../utils/Constant";
+import { addCourseDetails } from "../../../../../services/operations/courseDetailsAPI";
 
 
 export default function CourseInfo() {
@@ -23,6 +25,7 @@ export default function CourseInfo() {
     } = useForm()
 
     const dispatch = useDispatch()
+    const { token } = useSelector((state) => state.auth);
     const { course, editCourse } = useSelector((state) => state.course);
     const [loading, setLoading] = useState(false)
     const [coursecategories, setcoursecategories] = useState([])
@@ -64,6 +67,7 @@ export default function CourseInfo() {
         getCategories();
     }, [editCourse, course, setValue]);
     
+  
     const formUpdated =()=>{
         const currentvalue=getValues();
 
@@ -142,6 +146,16 @@ export default function CourseInfo() {
          formdata.append("instructions", JSON.stringify(data.courseRequirements));
          formdata.append("thumbnail", data.courseImage);
         //  formdata.append("coursename", data.courseCatagory);
+        formdata.append("status", COURSE_STATUS.DRAFT);
+
+        setLoading(true);
+        const result=await addCourseDetails(formdata,token)
+        if(result){
+            setStep(2)
+            dispatch(setCourse(result))
+          }
+          setLoading(false);
+
     }
 
     return (

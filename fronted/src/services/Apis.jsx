@@ -56,7 +56,7 @@ export const courseEndpoints = {
   // COURSE_DETAILS_API: BASE_URL + "/course/getCourseDetails",
    EDIT_COURSE_API: BASE_URL + "/api/v1/course/editCourse",
  COURSE_CATEGORIES_API: BASE_URL + "/api/v1/course/showAllCategories",
-  // CREATE_COURSE_API: BASE_URL + "/course/createCourse",
+     CREATE_COURSE_API: BASE_URL + "/api/v1/course/createCourse",
   // CREATE_SECTION_API: BASE_URL + "/course/addSection",
   // CREATE_SUBSECTION_API: BASE_URL + "/course/addSubSection",
   // UPDATE_SECTION_API: BASE_URL + "/course/updateSection",
