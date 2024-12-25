@@ -1,0 +1,85 @@
+/* ImageUpload.css */
+.upload-container {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .upload-label {
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: #1f9bcf;
+  }
+  
+  .required-mark {
+    color: red;
+  }
+  
+  .upload-dropzone {
+    border: 2px dashed #1f9bcf;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .active-dropzone {
+    background-color: #f1faff;
+  }
+  
+  .inactive-dropzone {
+    background-color: #ffffff;
+  }
+  
+  .upload-icon-container {
+    font-size: 3rem;
+    color: #1f9bcf;
+    margin-bottom: 10px;
+  }
+  
+  .upload-instructions {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .browse-highlight {
+    color: #1f9bcf;
+    font-weight: bold;
+  }
+  
+  .upload-guidelines {
+    font-size: 0.875rem;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  .preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .cancel-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }

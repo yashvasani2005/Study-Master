@@ -1,0 +1,59 @@
+.mainbodyofallsteps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .bg-color-yellow {
+    background-color: #ffeb3b;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .bg-richblack-500 {
+    background-color: #1c1c1c;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .deshing {
+    color: #ccc;
+    font-size: 1.2rem;
+  }
+  
+  .item_title {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .mainbodyofallsteps {
+      gap: 1rem;
+    }
+  
+    .bg-color-yellow,
+    .bg-richblack-500 {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+  
+    .deshing {
+      font-size: 1rem;
+    }
+  
+    .item_title {
+      font-size: 0.9rem;
+    }
+  }
+  

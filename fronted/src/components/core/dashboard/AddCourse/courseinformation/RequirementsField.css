@@ -1,0 +1,86 @@
+/* RequirementsField.css */
+.requirements-field-container {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .requirements-label {
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: #1f9bcf;
+  }
+  
+  .required-mark {
+    color: red;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input-field {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .input-field:focus {
+    border-color: #1f9bcf;
+    box-shadow: 0 0 5px rgba(31, 155, 207, 0.5);
+    outline: none;
+  }
+  
+  .add-button {
+    background-color: #1f9bcf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-button:hover {
+    background-color: #147a9c;
+  }
+  
+  .requirements-list {
+    margin-top: 10px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .requirement-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 5px;
+  }
+  
+  .remove-button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  

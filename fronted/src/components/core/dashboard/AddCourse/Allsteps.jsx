@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { BiCheck } from "react-icons/bi";
 import CourseInfo from "./courseinformation/CourseInfo";
+import "./Allsteps.css"
 
 export default function Allsteps() {
   const {step}=useSelector((state)=>state.course)

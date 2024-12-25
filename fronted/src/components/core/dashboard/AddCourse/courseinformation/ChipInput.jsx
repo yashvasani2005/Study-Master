@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
 import { useSelector } from "react-redux";
+import "./ChipInput.css"
 
 export default function ChipInput({ label, name, placeholder, register, errors, setValue, getValues }) {
   const { editCourse, course } = useSelector((state) => state.course);

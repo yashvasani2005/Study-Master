@@ -1,0 +1,78 @@
+.ClassInfo_mainForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Course_title_Section,
+  .Course_ShortDescription_Section,
+  .Course_Price_Section,
+  .Course_Category_Section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .Course_title_input,
+  .Course_ShortDescription_input,
+  .Course_Price_Section input,
+  .Course_Category_Section select {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .ruppee_icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+  }
+  
+  .required_filed {
+    color: red;
+  }
+  
+  .Course_Category_Section select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .Course_Category_Section select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .Course_Category_Section option {
+    padding: 0.8rem;
+    background-color: white;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .ClassInfo_mainForm {
+      padding: 1rem;
+    }
+  
+    .Course_title_input,
+    .Course_ShortDescription_input,
+    .Course_Price_Section input,
+    .Course_Category_Section select {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  

@@ -64,22 +64,24 @@ export const fetchInstructorCourses = async (token) => {
     toast.dismiss(toastId)
   }
   export const fetchCourseCategories = async () => {
-    let result = []
+    let result = [];
     try {
-      const response = await ApiConnector("GET", COURSE_CATEGORIES_API)
-      console.log("COURSE_CATEGORIES_API API RESPONSE............", response)
-  
-      if (!response?.data?.success) {
-        throw new Error("Could Not Fetch Course Categories")
-      }
-      result = response?.data?.data
+        const response = await ApiConnector("GET", COURSE_CATEGORIES_API);
+        console.log("COURSE_CATEGORIES_API API RESPONSE............", response);
+
+        if (!response?.data?.success) {
+            throw new Error("Could Not Fetch Course Categories");
+        }
+
+        // Correctly access the categories array
+        result = response?.data?.allcategory || [];
+    } catch (error) {
+        console.log("COURSE_CATEGORY_API API ERROR............", error);
+        toast.error(error.message);
     }
-     catch (error) {
-      console.log("COURSE_CATEGORY_API API ERROR............", error)
-      toast.error(error.message)
-    }
-    return result
-  }
+    return result;
+};
+
 
   export const editcourse = async (data, token) => {
     const toastId = toast.loading("Loading...")
