@@ -115,7 +115,7 @@ export default function CourseInfo() {
                     formdata.append("instructions", JSON.stringify(data.courseRequirements))
                 }
                 if (currentvalue.courseImage !== course.thumbnail) {
-                    formdata.append("thumbnail", data.courseImage)
+                    formdata.append("thumbnailimage", data.courseImage)
                 }
                 setLoading(true)
                 const result = await editcourse(formdata, token)
