@@ -36,7 +36,10 @@
     transform: translateY(-50%);
     color: #333;
   }
-  
+  label{
+    color: black;
+    font-weight: bold;
+  }
   .required_filed {
     color: red;
   }

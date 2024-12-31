@@ -4,9 +4,14 @@
     align-items: center;
     gap: 1.5rem;
   }
-  
+  .steps_list{
+    position: absolute;
+    left: 190px;    
+    top: 118px;
+
+  }
   .bg-color-yellow {
-    background-color: #ffeb3b;
+    background-color: #f0d90f;
     padding: 1rem;
     border-radius: 8px;
     color: #333;
