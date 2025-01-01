@@ -12,6 +12,7 @@
   }
   .bg-color-yellow {
     background-color: #f0d90f;
+    margin: 8px;
     padding: 1rem;
     border-radius: 8px;
     color: #333;

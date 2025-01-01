@@ -31,6 +31,8 @@ const Courseslice = createSlice({
   },
 })
 
+
+
 export const {setStep,  setCourse,  setEditCourse,  setPaymentLoading, resetCourseState,} = Courseslice.actions
    
 

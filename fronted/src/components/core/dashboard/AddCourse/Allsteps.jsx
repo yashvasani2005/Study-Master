@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import { BiCheck } from "react-icons/bi";
 import CourseInfo from "./courseinformation/CourseInfo";
-import CourseBuilder from "./courseBuilder/CourseBuilder";
+// import CourseBuilder from "./courseBuilder/CourseBuilderForm";
+import CourseBuilderForm from "./courseBuilder/CourseBuilderForm";
 import "./Allsteps.css";
 
 export default function Allsteps() {
@@ -40,7 +41,7 @@ export default function Allsteps() {
       </div>
 
       {step === 1 && <CourseInfo />}
-      {step === 2 && <CourseBuilder />}
+      {step === 2 && <CourseBuilderForm />}
     </div>
   );
 }

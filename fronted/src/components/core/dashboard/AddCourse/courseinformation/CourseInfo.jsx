@@ -7,7 +7,7 @@ import { FaIndianRupeeSign } from "react-icons/fa6";
 import ChipInput from "./ChipInput";
 import ImageUpload from "./ImageUpload"
 import RequirementsField from "./RequirementsField";
-import { setCourse, setStep } from "../../../../../slices/Courseslice";
+import { setCourse, setStep} from "../../../../../slices/Courseslice";
 import IconBtn from "../../../../../common/IconBtn";
 import { editcourse } from "../../../../../services/operations/courseDetailsAPI";
 import { COURSE_STATUS } from "../../../../../utils/Constant";
@@ -64,7 +64,7 @@ export default function CourseInfo() {
         }
 
         getCategories();
-    }, [editCourse, course, setValue]);
+    }, []);
 
 
     const formUpdated = () => {
@@ -121,7 +121,7 @@ export default function CourseInfo() {
                 const result = await editcourse(formdata, token)
                 setLoading(false)
                 if (result) {
-                    setStep(2)
+                    dispatch(setStep(2))
                     dispatch(setCourse(result))
                 }
 
@@ -149,7 +149,7 @@ export default function CourseInfo() {
         setLoading(true);
         const result = await addCourseDetails(formdata, token)
         if (result) {
-            setStep(2)
+            dispatch(setStep(2))
             dispatch(setCourse(result))
         }
         setLoading(false);
@@ -260,7 +260,7 @@ export default function CourseInfo() {
                         editCourse && (
                             <button
                                 className="Continue_button"
-                                onClick={() => { dispatch(setStep(2)) }}
+                                onClick={() => dispatch(setStep(2)) }
                             >
 
                                 Continue Without saving
@@ -269,6 +269,7 @@ export default function CourseInfo() {
                         )
 
                     }
+       
                     {/* <button>dsdsdsd</button> */}
                     <IconBtn text={!editCourse ? "Next" : "Save Changes"} />
                 </div>
