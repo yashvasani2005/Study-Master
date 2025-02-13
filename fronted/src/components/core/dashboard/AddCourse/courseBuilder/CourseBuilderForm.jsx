@@ -1,23 +1,163 @@
+import { useState } from "react";
 import "./CourseBuilderForm.css"
+import { useForm } from "react-hook-form";
+import IconBtn from "../../../../../common/IconBtn";
+import { IoMdAddCircleOutline } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { FaArrowRight } from "react-icons/fa";
+import { setCourse, setEditCourse, setStep } from "../../../../../slices/Courseslice";
+import toast from "react-hot-toast";
+import { updateSection } from "../../../../../services/operations/courseDetailsAPI";
+import { createSection } from "../../../../../services/operations/courseDetailsAPI";
+
+import NestedView from "./NestedView";
+
 
 export default function CourseBuilderForm() {
-      
+
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+  const [editSectionname, SeteditSectionname] = useState(true)
+  const { course } = useSelector((state) => state.course)
+  const { token } = useSelector((state) => state.auth)
+  const [loading, Setloading] = useState(false)
+  const dispatch = useDispatch();
+
+
+  const onSubmit = async (data) => {
+    Setloading(true);
+    let result;
+
+    if (editSectionname) {
+      //we are editing the section name
+      result = await updateSection({
+        sectionName: data.sectionName,
+        sectionid: data.editSectionname,
+        courseId: course._id,
+
+      }, token
+
+      )
+    }
+    else {
+
+      result = await createSection(
+        {
+          sectionName: data.sectionName,
+          courseid: course._id,
+        }, token
+      )
+    }
+
+    //update the value
+
+    if (result) {
+      dispatch(setCourse(result));
+      SeteditSectionname(null);
+      setValue("sectionname", "");
+    }
+
+    //loading false
+
+    Setloading(false)
+
+  }
+  const cancelEdit = () => {
+    SeteditSectionname(null);
+    setValue("sectionname", "");
+  }
+  const GoBack = () => {
+    dispatch(setStep(1));
+    dispatch(setEditCourse(true))
+
+  }
+  const GotoNext = () => {
+    if (course.coursecontent.length === 0) {
+      toast.error("Please Add Atleast One Section")
+      return;
+    }
+
+    if (course.coursecontent.some((section) => section.subsection.length === 0)) {
+      toast.error("Please Add Atleast One Lecture in each Section")
+      return;
+    }
+
+
+    dispatch(setStep(3))
+
+  }
+
+
+  const handleChangeEditSectionName=(sectionId, SectionName)={
+    if(editSectionname==sectionId){
+      cancelEdit();
+      return;
+    }
+
+    SeteditSectionname(sectionId)
+    setValue("sectionname",SectionName);
+  }
 
   return (
     <div className="Main_body_of_courseBuilder">
-    <h1>Hello Step 2 fgdgfgfgd rwerer</h1>
-    <ul>
-      <li>
-      Set the Course Price option or make it free.
-Standard size for the course thumbnail is 1024x576.
-Video section controls the course overview video.
-Course Builder is where you create & organize a course.
-Add Topics in the Course Builder section to create lessons, quizzes, and assignments.
-Information from the Additional Data section shows up on the course single page.
-Make Announcements to notify any important
-Notes to all enrolled students at once.
-      </li>
-    </ul>
+      <h1>Course Bulider</h1>
+      <form action="" onSubmit={handleSubmit(onSubmit)}>
+
+        <div className="mainsection">
+          <label htmlFor="sectionname" className="label">Section Name <sup>*</sup></label>
+          <input type="text" className="inputtagdorsection"
+            id="sectionname"
+            placeholder="Enter the Section Name"
+            {...register("sectionname", { required: true })}
+
+
+          />
+          {errors.sectionname && (
+            <span>Section name is required</span>
+          )}
+        </div>
+        <div className="coursebuilderButtons">
+          <IconBtn
+            type="Submit"
+            text={editSectionname ? "Edit Section Name" : "Create Section"}
+            outline={true}
+          >
+            <IoMdAddCircleOutline />
+          </IconBtn>
+          {
+            editSectionname && (
+              <button
+                className="CancelEdit"
+                onClick={cancelEdit}>
+                Cancel Edit
+              </button>
+            )
+          }
+
+        </div>
+
+      </form>
+
+      {
+        course.coursecontent.length > 0 && (
+          <NestedView  handleChangeEditSectionName={handleChangeEditSectionName } />
+        )
+      }
+
+      <div className="BackandNextButton">
+        <button
+          onClick={GoBack}>
+          Back
+        </button>
+        <IconBtn
+          text="Next"
+          onclick={GotoNext}
+        >
+          <FaArrowRight />
+
+        </IconBtn>
+
+      </div>
+
     </div>
   );
 }

@@ -122,3 +122,46 @@ export const addCourseDetails = async (data, token) => {
   toast.dismiss(toastId)
   return result
 }
+
+export const updateSection = async (data, token) => {
+  let result = null
+  const toastId = toast.loading("Loading...")
+  try {
+    const response = await ApiConnector("POST", UPDATE_SECTION_API, data, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("UPDATE SECTION API RESPONSE............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Update Section")
+    }
+    toast.success("Course Section Updated")
+    result = response?.data?.data
+  } catch (error) {
+    console.log("UPDATE SECTION API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+  return result
+}
+
+
+export const createSection = async (data, token) => {
+  let result = null
+  const toastId = toast.loading("Loading...")
+  try {
+    const response = await ApiConnector("POST", CREATE_SECTION_API, data, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("CREATE SECTION API RESPONSE............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Create Section")
+    }
+    toast.success("Course Section Created")
+    result = response?.data?.updatedCourse
+  } catch (error) {
+    console.log("CREATE SECTION API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+  return result
+}
