@@ -1,0 +1,49 @@
+.mainbodyOFNestedView {
+    width: 100%;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .WholeNestedSection details {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .WholeNestedSection details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .WholeNestedSection details summary:hover {
+    background: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .firstSectionOfsection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .Sectionname {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 600px) {
+    .WholeNestedSection details summary {
+      font-size: 16px;
+    }
+  }

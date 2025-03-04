@@ -9,14 +9,14 @@ import { setCourse, setEditCourse, setStep } from "../../../../../slices/Courses
 import toast from "react-hot-toast";
 import { updateSection } from "../../../../../services/operations/courseDetailsAPI";
 import { createSection } from "../../../../../services/operations/courseDetailsAPI";
-
 import NestedView from "./NestedView";
+
 
 
 export default function CourseBuilderForm() {
 
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
-  const [editSectionname, SeteditSectionname] = useState(true)
+  const [editSectionname, SeteditSectionname] = useState(null)
   const { course } = useSelector((state) => state.course)
   const { token } = useSelector((state) => state.auth)
   const [loading, Setloading] = useState(false)
@@ -42,12 +42,16 @@ export default function CourseBuilderForm() {
 
       result = await createSection(
         {
-          sectionName: data.sectionName,
-          courseid: course._id,
+          sectionName: data.sectionname,
+          courseId: course._id,
+   
         }, token
+        
       )
+ console.log("your result is here",result)
+ 
     }
-
+   
     //update the value
 
     if (result) {
@@ -55,6 +59,7 @@ export default function CourseBuilderForm() {
       SeteditSectionname(null);
       setValue("sectionname", "");
     }
+    console.log("your result is here",result)
 
     //loading false
 
@@ -87,15 +92,23 @@ export default function CourseBuilderForm() {
   }
 
 
-  const handleChangeEditSectionName=(sectionId, SectionName)={
-    if(editSectionname==sectionId){
-      cancelEdit();
-      return;
-    }
+  // const handleChangeEditSectionName=(sectionId, SectionName)=>{
+  //   if(editSectionname===sectionId){
+  //     cancelEdit();
+  //     return;
+  //   }
 
-    SeteditSectionname(sectionId)
-    setValue("sectionname",SectionName);
-  }
+  //   SeteditSectionname(sectionId)
+  //   setValue("sectionname",SectionName);
+  // }
+  const handleChangeEditSectionName = (sectionId, sectionName) => {
+    if (editSectionname === sectionId) {
+        cancelEdit();
+        return;
+    }
+    SeteditSectionname(sectionId);
+    setValue("sectionname", sectionName);  // ✅ Fixed field name
+};
 
   return (
     <div className="Main_body_of_courseBuilder">
