@@ -23,49 +23,83 @@ export default function CourseBuilderForm() {
   const dispatch = useDispatch();
 
 
-  const onSubmit = async (data) => {
+const onSubmit = async (data) => {
+    if (!token) {
+        toast.error("Unauthorized! Please log in again.");
+        return;
+    }
+
     Setloading(true);
     let result;
 
     if (editSectionname) {
-      //we are editing the section name
-      result = await updateSection({
-        sectionName: data.sectionName,
-        sectionid: data.editSectionname,
-        courseId: course._id,
-
-      }, token
-
-      )
+        result = await updateSection({
+            sectionName: data.sectionname,
+            sectionid: editSectionname,
+            courseId: course._id,
+        }, token);
+        console.log("Updating Section with Data:", result);
+    } else {
+        result = await createSection({
+            sectionName: data.sectionname,
+            courseId: course._id,
+        }, token);
     }
-    else {
 
-      result = await createSection(
-        {
-          sectionName: data.sectionname,
-          courseId: course._id,
-   
-        }, token
-        
-      )
- console.log("your result is here",result)
- 
-    }
-   
-    //update the value
+    console.log("API Response:", result);
 
     if (result) {
-      dispatch(setCourse(result));
-      SeteditSectionname(null);
-      setValue("sectionname", "");
+        dispatch(setCourse(result));
+        SeteditSectionname(null);
+        setValue("sectionname", "");
     }
-    console.log("your result is here",result)
 
-    //loading false
+    Setloading(false);
+};
+// const onSubmit = async (data) => {
+//   Setloading(true);
+//   let result;
 
-    Setloading(false)
+//   if (editSectionname) {
+//     //we are editing the section name
+//     result = await updateSection({
+//       sectionName: data.sectionName,
+//       sectionid: data.editSectionname,
+//       courseId: course._id,
 
-  }
+//     }, token
+
+//     )
+//   }
+//   else {
+
+//     result = await createSection(
+//       {
+//         sectionName: data.sectionname,
+//         courseId: course._id,
+   
+ 
+//       }, token
+      
+//     )
+// console.log("your result is here",result)
+
+//   }
+ 
+//   //update the value
+
+//   if (result) {
+//     dispatch(setCourse(result));
+//     SeteditSectionname(null);
+//     setValue("sectionname", "");
+//   }
+//   console.log("your result is here",result)
+
+//   //loading false
+
+//   Setloading(false)
+
+// }
   const cancelEdit = () => {
     SeteditSectionname(null);
     setValue("sectionname", "");
@@ -76,7 +110,7 @@ export default function CourseBuilderForm() {
 
   }
   const GotoNext = () => {
-    if (course.coursecontent.length === 0) {
+    if (course?.coursecontent?.length === 0) {
       toast.error("Please Add Atleast One Section")
       return;
     }
@@ -151,7 +185,7 @@ export default function CourseBuilderForm() {
       </form>
 
       {
-        course.coursecontent.length > 0 && (
+        course?.coursecontent?.length > 0 && (
           <NestedView  handleChangeEditSectionName={handleChangeEditSectionName } />
         )
       }
