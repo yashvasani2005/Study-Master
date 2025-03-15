@@ -1,65 +1,170 @@
-.mainbodyofallsteps {
-    display: flex;
+/* Allsteps.css */
+
+/* Main Container */
+.allsteps_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden; /* Ensure the animation doesn't overflow */
+}
+
+/* Border Animation */
+.allsteps_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  z-index: -1;
+  background: linear-gradient(45deg, #f59e0b, #fcd34d, #f59e0b);
+  animation: borderAnimation 3s linear infinite;
+}
+
+.allsteps_container::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 10px;
+  background: #ffffff;
+  z-index: -1;
+}
+
+/* Keyframes for Border Animation */
+@keyframes borderAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Steps List */
+.steps_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.steps_list::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+/* Step Item */
+.step_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  padding: 3rem; /* Increased padding */
+  border-radius: 50%;
+  width: 90px; /* Increased width */
+  height: 90px; /* Increased height */
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.step_item.bg-color-yellow {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.step_item.bg-richblack-500 {
+  background: #e0e0e0;
+  color: #2c3e50;
+}
+
+.step_item .deshing {
+  display: none; /* Hide dashes for now */
+}
+
+.step_item .item_title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Step Icons */
+.step_item svg {
+  font-size: 1.8rem; /* Increased icon size */
+  color: #ffffff;
+}
+
+/* Active Step */
+.step_item.active {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+/* Hover Effect */
+.step_item:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .steps_list {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
   }
-  .steps_list{
-    position: absolute;
-    left: 190px;    
-    top: 118px;
 
+  .steps_list::before {
+    display: none;
   }
-  .bg-color-yellow {
-    background-color: #f0d90f;
-    margin: 8px;
-    padding: 1rem;
-    border-radius: 8px;
-    color: #333;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+
+  .step_item {
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 1rem 1.5rem; /* Adjusted padding */
+    border-radius: 25px;
+    gap: 0.8rem;
   }
-  
-  .bg-richblack-500 {
-    background-color: #1c1c1c;
-    padding: 1rem;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+
+  .step_item .item_title {
+    margin-top: 0;
+    font-size: 0.9rem; /* Adjusted font size */
   }
-  
-  .deshing {
-    color: #ccc;
-    font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+  .step_item {
+    padding: 0.8rem 1.2rem; /* Adjusted padding */
+    font-size: 0.9rem;
   }
-  
-  .item_title {
-    font-size: 1.1rem;
-    font-weight: 500;
+
+  .step_item .item_title {
+    font-size: 0.8rem; /* Adjusted font size */
   }
-  
-  @media screen and (max-width: 768px) {
-    .mainbodyofallsteps {
-      gap: 1rem;
-    }
-  
-    .bg-color-yellow,
-    .bg-richblack-500 {
-      font-size: 0.9rem;
-      padding: 0.8rem;
-    }
-  
-    .deshing {
-      font-size: 1rem;
-    }
-  
-    .item_title {
-      font-size: 0.9rem;
-    }
-  }
-  
+}

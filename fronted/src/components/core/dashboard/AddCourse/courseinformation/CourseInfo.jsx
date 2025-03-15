@@ -191,7 +191,7 @@ export default function CourseInfo() {
 
                 </div>
                 <div className="Course_Price_Section">
-                    <label htmlFor="coursePrice">Course Price <sup className="required_filed">*</sup></label>
+                    <label htmlFor="coursePrice">Course Price (in Rupee) <sup className="required_filed">*</sup></label>
 
                     <input
                         className="Course_title_input"

@@ -1,55 +1,76 @@
+/* ChipInput.css */
+
 .chip-input-container {
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .chip-input-label {
-    font-size: 1rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 8px;
-    color: #000000;
-  }
-  
+  margin-bottom: 1.5rem;
+}
+
+.chip-input-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.chip-input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.chip-input-wrapper:focus-within {
+  border-color: #f59e0b;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  background: #f59e0b;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.chip-delete-button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.chip-input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.chip-input-error {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .chip-input-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 0.6rem;
   }
-  
+
   .chip {
-    background-color: #f1faff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
   }
-  
-  .chip-delete-button {
-    background-color: transparent;
-    border: none;
-    color: red;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-left: 5px;
-  }
-  
+
   .chip-input-field {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    padding: 5px;
-    min-width: 150px;
+    font-size: 0.9rem;
   }
-  
-  .chip-input-error {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 5px;
-  }
-  
+}

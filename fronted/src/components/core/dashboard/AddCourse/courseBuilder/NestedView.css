@@ -1,151 +1,178 @@
-/* Main Container Styling */
+/* NestedView.css */
+
 .mainbodyOFNestedView {
-  width: 100%;
-  background: #f9f9fb;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Section Styling */
-.WholeNestedSection details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
   background: #ffffff;
-  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.WholeNestedSection details {
+  background: #f9f9f9;
+  padding: 1rem;
   border-radius: 8px;
-  margin-bottom: 12px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.WholeNestedSection details[open] {
-  transform: scale(1.02);
-}
-
-.WholeNestedSection details summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.WholeNestedSection details summary:hover {
-  background: #e8f0fe;
-}
-
-/* Section Header */
-.firstSectionOfsection {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.Sectionname {
-  font-size: 17px;
-  font-weight: 600;
-  color: #444;
-}
-
-/* Buttons Styling */
-.EditDeleteDropdownButton {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.sectionEditbutton,
-.sectionDeletebutton,
-.subsectionEdit,
-.subsectionDelete {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color:black;
-  transition: color 0.3s ease;
-}
-
-/* .sectionEditbutton:hover {
-  color: #007bff;
-} */
-
-/* .sectionDeletebutton:hover,
-.subsectionDelete:hover {
-  color: #dc3545;
-} */
-
-.pipeline {
-  color: #aaa;
-}
-
-/* Subsection Styling */
-.MainBodyOfSubsection {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-.viewsubsectiondata {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
-.viewsubsectiondata:hover {
-  background: #f4f4f4;
+.WholeNestedSection details[open] {
+  background: #ffffff;
+}
+
+.WholeNestedSection details summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.firstSectionOfsection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Sectionname {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.EditDeleteDropdownButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionEditbutton,
+.sectionDeletebutton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.sectionEditbutton:hover {
+  color: #f59e0b;
+}
+
+.sectionDeletebutton:hover {
+  color: #ff4d4d;
+}
+
+.pipeline {
+  color: #e0e0e0;
+}
+
+.MainBodyOfSubsection {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.viewsubsectiondata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .firstSectionOfSUBsection {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
 .SubSectionname {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 500;
+  color: #2c3e50;
 }
 
-/* Add Lecture Button */
-.addlectureButtton {
-  background: #007bff;
-  color: white;
-  padding: 8px 14px;
+.SubsectionButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subsectionEdit,
+.subsectionDelete {
+  background: none;
   border: none;
-  border-radius: 6px;
-  font-size: 15px;
   cursor: pointer;
-  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.subsectionEdit:hover {
+  color: #f59e0b;
+}
+
+.subsectionDelete:hover {
+  color: #ff4d4d;
+}
+
+.addlectureButtton {
+  background: #f59e0b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
   transition: background 0.3s ease;
 }
 
 .addlectureButtton:hover {
-  background: #0056b3;
+  background: #e67e22;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .mainbodyOFNestedView {
+    padding: 1.5rem;
+  }
+
   .WholeNestedSection details summary {
-      font-size: 16px;
+    font-size: 0.9rem;
   }
-  .Sectionname, .SubSectionname {
-      font-size: 14px;
+
+  .Sectionname,
+  .SubSectionname {
+    font-size: 0.9rem;
   }
-  .sectionEditbutton,
-  .sectionDeletebutton,
-  .subsectionEdit,
-  .subsectionDelete {
-      font-size: 18px;
+
+  .addlectureButtton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainbodyOFNestedView {
+    padding: 1rem;
+  }
+
+  .WholeNestedSection details summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .EditDeleteDropdownButton {
+    gap: 0.3rem;
   }
 }

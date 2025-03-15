@@ -5,7 +5,7 @@ export default function Mainindex() {
 
   return (
    <div>
-         <h2 className="mainbody_heading">Add Course</h2>
+         {/* <h2 className="mainbody_heading">Add Course</h2> */}
          <div className="all_steps_creating_course">
              <Allsteps/>    
          </div>

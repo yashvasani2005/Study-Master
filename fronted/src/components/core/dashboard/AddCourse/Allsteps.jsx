@@ -42,6 +42,7 @@ export default function Allsteps() {
 
       {step === 1 && <CourseInfo />}
       {step === 2 && <CourseBuilderForm />}
+      {step === 3 && <div>Step 3</div>}
     </div>
   );
 }

@@ -296,11 +296,12 @@ export const createSubSection = async (data, token) => {
   try {
     const response = await ApiConnector("POST", CREATE_SUBSECTION_API, data, {
       Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
     })
     console.log("CREATE SUB-SECTION API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Add Lecture")
-    }
+    } 
     toast.success("Lecture Added")
     result = response?.data?.data
   } catch (error) {
@@ -314,6 +315,7 @@ export const createSubSection = async (data, token) => {
 
 export const updateSubSection = async (data, token) => {
   let result = null
+  console.log("updatesubsection dtaa:::",data)
   const toastId = toast.loading("Loading...")
   try {
     const response = await ApiConnector("POST", UPDATE_SUBSECTION_API, data, {

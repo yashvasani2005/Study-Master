@@ -1,85 +1,102 @@
 /* ImageUpload.css */
+
 .upload-container {
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .upload-label {
-    font-size: 1rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 8px;
-    color: #000000;
-  }
-  
-  .required-mark {
-    color: red;
-  }
-  
+  margin-bottom: 1.5rem;
+}
+
+.upload-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.upload-dropzone {
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.upload-dropzone.active-dropzone {
+  border-color: #f59e0b;
+}
+
+.preview-container {
+  position: relative;
+}
+
+.preview-image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.cancel-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel-button:hover {
+  background: #cc0000;
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.upload-icon-container {
+  color: #f59e0b;
+  font-size: 2rem;
+}
+
+.upload-instructions {
+  font-size: 1rem;
+  color: #666;
+}
+
+.browse-highlight {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.upload-guidelines {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .upload-dropzone {
-    border: 2px dashed #1f9bcf;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 1rem;
   }
-  
-  .active-dropzone {
-    background-color: #f1faff;
-  }
-  
-  .inactive-dropzone {
-    background-color: #ffffff;
-  }
-  
-  .upload-icon-container {
-    font-size: 3rem;
-    color: #1f9bcf;
-    margin-bottom: 10px;
-  }
-  
+
   .upload-instructions {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.9rem;
   }
-  
-  .browse-highlight {
-    color: #1f9bcf;
-    font-weight: bold;
-  }
-  
+
   .upload-guidelines {
-    font-size: 0.875rem;
-    color: #777;
-    margin-top: 10px;
+    font-size: 0.8rem;
   }
-  
-  .preview-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .preview-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
-  
-  .cancel-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 5px;
-  }
+}

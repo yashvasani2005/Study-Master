@@ -52,14 +52,14 @@ export default function NestedView({ handleChangeEditSectionName }) {
     setconfirmationmodal(null);
 
   }
-  const handeletethedeleteSubSection = async (subSectionID, sectionID) => {
+  const handeletethedeleteSubSection = async (subsectionid, sectionId) => {
     const result = await deleteSubSection({
-      subSectionID,
-      sectionID,
+      subsectionid,
+      sectionId,
       token
     })
     if (result) {
-      const updatedcourseContent = course.coursecontent.map((section) => section._id === sectionID ? result : section)
+      const updatedcourseContent = course.coursecontent.map((section) => section._id === sectionId ? result : section)
       const Updatedcourse = { ...course, coursecontent: updatedcourseContent }
       //extra soch na
       dispatch(setCourse(Updatedcourse));
@@ -120,17 +120,19 @@ export default function NestedView({ handleChangeEditSectionName }) {
                         <RxDropdownMenu />
                         <p className="SubSectionname">{data.title}</p>
                       </div>
-                      <div className="SubsectionButtons">
+                      <div 
+                         onClick={(e)=>e.stopPropagation()}
+                      className="SubsectionButtons">
                         <button className="subsectionEdit">
                           <RiEdit2Fill
-                            onClick={() => seteditSubSection({ ...data, sectionID: section.Id })} />
+                            onClick={() => seteditSubSection({ ...data, sectionID: section._id })} />
                         </button>
                         <button className="subsectionDelete" onClick={() => {
                           setconfirmationmodal({
                             text1: "Delete This SubSection",
                             text2: "Selected Lectures will be deleted",
-                            btn1text: "Delete",
-                            btn2text: "Cancel",
+                            btn1Text: "Delete",
+                            btn2Text: "Cancel",
                             btn1Handler: () => handeletethedeleteSubSection(data._id, section._id),
                             btn2Handler: () => setconfirmationmodal(null)
                           })
